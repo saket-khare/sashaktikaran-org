@@ -4,46 +4,35 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div className="relative h-screen w-full">
-      {/* Background Image with Dark Overlay */}
+      {/* Background Image with Subtle Warm Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/hero.png" // [AI] Replace with actual image path
-          alt="Hero Background"
+          src="/hero2.jpeg" // [AI] Heartfelt photo of rural woman teaching children
+          alt="Rural woman teaching children - Education Starts With Her"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/30" /> {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60" />{" "}
+        {/* [AI] Subtle overlay for warmth */}
       </div>
 
-      {/* Content Container */}
-      <div className="relative h-full flex items-center">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-2xl">
-            {/* Subheading */}
-            <p className="text-sm uppercase tracking-wider text-white/90 mb-4">
-              Because Education Empowers
-            </p>
-
-            {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Empower India's Future
+      {/* [AI] Centered Content - matches reference image */}
+      <div className="relative h-full flex items-center justify-center">
+        <div className="container mx-auto px-4 md:px-8 ">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Empowering rural communities
+              <br />
+              through education
             </h1>
-
-            {/* Description */}
-            <p className="text-lg text-white/80 mb-8">
-              Support Our Mission to Educate & Empower Rural Communities
+            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
+              We provide foundational education to children and women in remote
+              villages, bridging gaps with technology.
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors">
-                Contribute Now
-              </button>
-              <button className="px-8 py-3 bg-white/10 text-white rounded-md font-medium hover:bg-white/20 transition-colors backdrop-blur-sm">
-                Get Involved
-              </button>
-            </div>
+            <button className="px-8 py-4 bg-white/90 text-gray-900 rounded-md font-semibold text-lg shadow hover:bg-white transition-colors">
+              Learn more
+            </button>
           </div>
         </div>
       </div>

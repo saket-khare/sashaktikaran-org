@@ -1,13 +1,14 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import {
+  Didact_Gothic,
   Geist,
   Geist_Mono,
   Merriweather,
   Source_Sans_3,
-  Didact_Gothic,
 } from "next/font/google";
 import "./globals.css";
-import { Navbar, Footer } from "@/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,9 +52,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} ${sourceSans3.variable} ${didactGothic.variable} font-didact-gothic antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <div>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
