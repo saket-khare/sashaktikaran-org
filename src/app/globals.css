@@ -44,6 +44,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Social Media Brand Colors */
+  --color-lilac: var(--lilac);
+  --color-calendula: var(--calendula);
+  --color-buttercup: var(--buttercup);
+  --color-daisy: var(--daisy);
+  --color-petal: var(--petal);
+  --color-moss: var(--moss);
+  --color-delphinium: var(--delphinium);
 }
 
 @media (prefers-color-scheme: light) {
@@ -91,6 +100,22 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Social Media Brand Colors - Light Theme */
+  --lilac: #B8A0B9;
+  --calendula: #DE8554;
+  --buttercup: #E7C878;
+  --daisy: #F5F0EC;
+  --petal: #F8D6C4;
+  --moss: #5B623A;
+  --delphinium: #A8B9C3;
+  
+  /* Integrated Brand Colors - Updating existing variables with social media palette */
+  --primary: var(--moss); /* Using Moss as primary brand color */
+  --secondary: var(--lilac); /* Using Lilac for secondary actions */
+  --accent: var(--calendula); /* Using Calendula for accents */
+  --muted: var(--daisy); /* Using Daisy for muted backgrounds */
+  --card: var(--daisy); /* Light background using Daisy */
 }
 
 .dark {
@@ -125,6 +150,22 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  
+  /* Social Media Brand Colors - Dark Theme (adjusted for visibility) */
+  --lilac: #C2B1C3; /* Slightly lighter for dark theme */
+  --calendula: #E89364; /* Slightly lighter for dark theme */
+  --buttercup: #EBD088; /* Slightly lighter for dark theme */
+  --daisy: #2A2A2A; /* Darker version for dark theme background */
+  --petal: #3A2F2A; /* Darker version for dark theme */
+  --moss: #6B7340; /* Slightly lighter for dark theme */
+  --delphinium: #B8C9D3; /* Slightly lighter for dark theme */
+  
+  /* Integrated Brand Colors - Dark Theme */
+  --primary: var(--moss);
+  --secondary: var(--lilac);
+  --accent: var(--calendula);
+  --muted: var(--daisy);
+  --card: var(--daisy);
 }
 
 @layer base {
@@ -134,4 +175,31 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Utility classes for direct color usage */
+@layer utilities {
+  .text-lilac { color: var(--lilac); }
+  .text-calendula { color: var(--calendula); }
+  .text-buttercup { color: var(--buttercup); }
+  .text-daisy { color: var(--daisy); }
+  .text-petal { color: var(--petal); }
+  .text-moss { color: var(--moss); }
+  .text-delphinium { color: var(--delphinium); }
+  
+  .bg-lilac { background-color: var(--lilac); }
+  .bg-calendula { background-color: var(--calendula); }
+  .bg-buttercup { background-color: var(--buttercup); }
+  .bg-daisy { background-color: var(--daisy); }
+  .bg-petal { background-color: var(--petal); }
+  .bg-moss { background-color: var(--moss); }
+  .bg-delphinium { background-color: var(--delphinium); }
+  
+  .border-lilac { border-color: var(--lilac); }
+  .border-calendula { border-color: var(--calendula); }
+  .border-buttercup { border-color: var(--buttercup); }
+  .border-daisy { border-color: var(--daisy); }
+  .border-petal { border-color: var(--petal); }
+  .border-moss { border-color: var(--moss); }
+  .border-delphinium { border-color: var(--delphinium); }
 }
