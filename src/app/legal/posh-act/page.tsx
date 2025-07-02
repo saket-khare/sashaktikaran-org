@@ -23,10 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
-("use client");
-
 import React from "react";
-import { motion } from "motion/react";
+
 import {
   Shield,
   Users,
@@ -94,34 +92,20 @@ const PoSHActPage = () => {
       <section className="bg-[#006b5e]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-6"
-            >
+            <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-[#006b5e]/10 text-[#006b5e] text-sm font-medium rounded-full mb-4">
                 Legal Framework
               </span>
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6"
-            >
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
               Prevention of Sexual Harassment (PoSH) Act
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 leading-relaxed"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Welcome to Sashaktikaran Foundation! As a dedicated not-for-profit
               organization, we align our work with key legal frameworks that
               protect and empower women and children. Below are the primary laws
               that guide our mission and initiatives.
-            </motion.p>
+            </p>
           </div>
         </div>
       </section>
@@ -130,12 +114,7 @@ const PoSHActPage = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-6">
                 Overview
               </h2>
@@ -151,15 +130,9 @@ const PoSHActPage = () => {
                 in creating safer workspaces and empowering victims to speak up
                 against harassment without fear of retaliation.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-[#006b5e]/5 rounded-2xl p-8"
-            >
+            <div className="bg-[#006b5e]/5 rounded-2xl p-8">
               <div className="w-16 h-16 bg-[#006b5e] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-white" />
               </div>
@@ -171,7 +144,7 @@ const PoSHActPage = () => {
                 focus on protecting women from sexual harassment and creating
                 accountability mechanisms.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -179,13 +152,7 @@ const PoSHActPage = () => {
       {/* Key Provisions Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
               Key Provisions
             </h2>
@@ -193,18 +160,14 @@ const PoSHActPage = () => {
               Understanding the fundamental aspects of the PoSH Act that create
               safer workplaces
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {keyProvisions.map((provision, index) => {
               const IconComponent = provision.icon;
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
                 >
                   <div className="w-12 h-12 bg-[#006b5e]/10 rounded-full flex items-center justify-center mb-4">
@@ -216,7 +179,7 @@ const PoSHActPage = () => {
                   <p className="text-gray-600 leading-relaxed">
                     {provision.description}
                   </p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -226,13 +189,7 @@ const PoSHActPage = () => {
       {/* Our Commitment Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
               Our Commitment to PoSH
             </h2>
@@ -240,20 +197,13 @@ const PoSHActPage = () => {
               We advocate for the PoSH Act through comprehensive programs and
               support systems
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {ourCommitments.map((commitment, index) => {
               const IconComponent = commitment.icon;
               return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
-                >
+                <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-[#006b5e] rounded-full flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
@@ -263,7 +213,7 @@ const PoSHActPage = () => {
                   <p className="text-gray-600 leading-relaxed">
                     {commitment.description}
                   </p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -273,12 +223,7 @@ const PoSHActPage = () => {
       {/* Call to Action Section */}
       <section className="py-16 bg-[#006b5e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Supporting Workplace Safety
             </h2>
@@ -299,7 +244,7 @@ const PoSHActPage = () => {
                 Contact Us
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

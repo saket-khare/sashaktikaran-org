@@ -1,20 +1,26 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import DonationModal from "@/components/ui/donation-modal";
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 
 const DonateButton = ({
   buttonText = "Contribute Now",
+  className,
 }: {
   buttonText?: string;
+  className?: string;
 }) => {
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   return (
-    <div>
+    <div className="w-full">
       <Button
         onClick={() => setIsDonationModalOpen(true)}
-        className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 cursor-pointer"
+        className={cn(
+          "bg-[#006b5e] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#006b5e]/90 transition-all duration-300 cursor-pointer",
+          className
+        )}
       >
         {buttonText}
       </Button>

@@ -1,5 +1,5 @@
-"use client";
-
+import DonateButton from "@/app/about/_components/DonateButton";
+import { Button } from "@/components/ui/button";
 import { caseStudies } from "@/data/caseStudies";
 import {
   Calendar,
@@ -10,15 +10,18 @@ import {
   Target,
   Users,
 } from "lucide-react";
-import { motion } from "motion/react";
+
 import Image from "next/image";
-import { notFound, useParams } from "next/navigation";
-import { useState } from "react";
-import DonationModal from "@/components/ui/donation-modal";
+import { notFound } from "next/navigation";
 
 // Generate metadata for individual campaign pages
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const campaign = caseStudies.find((study) => study.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const campaign = caseStudies.find((study) => study.slug === slug);
 
   if (!campaign) {
     return {
@@ -40,9 +43,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function CampaignPage() {
-  const { slug } = useParams();
-  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
+export default async function CampaignPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  // const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   const campaign = caseStudies.find((study) => study.slug === slug);
 
@@ -69,11 +76,7 @@ export default function CampaignPage() {
 
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <div className="flex items-center gap-4 mb-4">
                 <span
                   className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${
@@ -122,7 +125,7 @@ export default function CampaignPage() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -133,11 +136,7 @@ export default function CampaignPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
+              <div>
                 {/* Summary */}
                 <div className="bg-white rounded-2xl p-8 mb-8 border border-gray-200 shadow-sm">
                   <h2 className="text-2xl font-bold text-[#006b5e] mb-4">
@@ -249,17 +248,12 @@ export default function CampaignPage() {
                     </div>
                   </div>
                 )}
-              </motion.div>
+              </div>
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="space-y-6"
-              >
+              <div className="space-y-6">
                 {/* Funding Progress */}
                 {campaign.budget && (
                   <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
@@ -312,16 +306,20 @@ export default function CampaignPage() {
                       </div>
                     </div>
 
-                    <button
+                    {/* <button
                       onClick={() => setIsDonationModalOpen(true)}
                       className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90 text-white py-3 rounded-lg font-semibold transition-colors mb-3"
                     >
                       Support This Campaign
-                    </button>
+                    </button> */}
+                    <DonateButton
+                      buttonText="Support This Campaign"
+                      className="w-full mb-3"
+                    />
 
-                    <button className="w-full border-2 border-[#006b5e] text-[#006b5e] hover:bg-[#006b5e] hover:text-white py-3 rounded-lg font-semibold transition-colors">
+                    <Button className="bg-white text-[#006b5e] border border-[#006b5e] w-full px-8 py-4 rounded-lg font-semibold hover:bg-[#006b5e]/10 transition-all duration-300 cursor-pointer">
                       Learn More
-                    </button>
+                    </Button>
                   </div>
                 )}
 
@@ -397,17 +395,17 @@ export default function CampaignPage() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Donation Modal */}
-      <DonationModal
+      {/* <DonationModal
         isOpen={isDonationModalOpen}
         onClose={() => setIsDonationModalOpen(false)}
-      />
+      /> */}
     </main>
   );
 }
