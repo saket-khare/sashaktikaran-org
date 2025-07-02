@@ -43,6 +43,7 @@ export const metadata: Metadata = {
       "Sashaktikaran Foundation - Empowering Rural Communities Through Education",
     template: "%s | Sashaktikaran Foundation",
   },
+
   description:
     "Sashaktikaran Foundation empowers rural communities through foundational education. We provide quality learning opportunities to children and women in remote villages, bridging gaps with technology and community-driven approaches.",
   keywords: [
@@ -157,6 +158,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        <link rel="icon" href="/logo-black.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} ${sourceSans3.variable} ${didactGothic.variable} font-didact-gothic antialiased`}
