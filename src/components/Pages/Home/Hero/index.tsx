@@ -1,7 +1,17 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 
 const Hero = () => {
+  const handleLearnMoreClick = () => {
+    // Scroll to the About section using smooth scrolling
+    const viewport = window.innerHeight;
+    window.scrollTo({
+      top: viewport,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="relative h-screen w-full">
       {/* Background Image with Subtle Warm Overlay */}
@@ -30,7 +40,10 @@ const Hero = () => {
               We provide foundational education to children and women in remote
               villages, bridging gaps with technology.
             </p>
-            <button className="px-8 py-4 bg-white/90 text-gray-900 rounded-md font-semibold text-lg shadow hover:bg-white transition-colors">
+            <button
+              onClick={handleLearnMoreClick}
+              className="px-8 py-4 bg-white/90 text-gray-900 rounded-md font-semibold text-lg shadow hover:bg-white transition-colors"
+            >
               Learn more
             </button>
           </div>

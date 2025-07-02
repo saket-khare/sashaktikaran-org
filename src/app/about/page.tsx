@@ -1,15 +1,36 @@
-"use client";
+import { Metadata } from "next";
 
-import { Button } from "@/components/ui/button";
-import DonationModal from "@/components/ui/donation-modal";
+// SEO metadata for about page
+export const metadata: Metadata = {
+  title: "About Us - Our Story & Mission",
+  description:
+    "Learn about Sashaktikaran Foundation, a not-for-profit organization founded on International Women's Day 2017. Discover our mission to empower rural women and children through holistic foundational education across Madhya Pradesh.",
+  keywords: [
+    "about sashaktikaran foundation",
+    "rural education NGO",
+    "women empowerment",
+    "Shruti Shrivastava",
+    "Mrinalika Rathore",
+    "educational initiatives",
+    "community development",
+    "Madhya Pradesh",
+  ],
+  openGraph: {
+    title: "About Sashaktikaran Foundation - Our Story & Mission",
+    description:
+      "Founded on International Women's Day 2017, we empower rural women and children through foundational education. Meet our team and learn about our achievements.",
+    images: ["/about.jpeg"],
+  },
+};
+
+// ("use client");
+
 import { Heart, MapPin, School, Users } from "lucide-react";
-import { motion } from "motion/react";
 import Image from "next/image";
-import { useState } from "react";
+import DonateButton from "./_components/DonateButton";
+// import { useState } from "react";
 
 const AboutPage = () => {
-  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
-
   const achievements = [
     {
       number: "650+",
@@ -64,14 +85,7 @@ const AboutPage = () => {
               Offering children hope, knowledge, and a path to a brighter
               future.
             </p>
-            <div>
-              <Button
-                onClick={() => setIsDonationModalOpen(true)}
-                className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300"
-              >
-                Contribute Now
-              </Button>
-            </div>
+            <DonateButton />
           </div>
         </div>
       </section>
@@ -179,21 +193,16 @@ const AboutPage = () => {
             <p className="text-lg text-gray-600 mb-8">
               Become a member and help us improve the world.
             </p>
-            <Button
+            {/* <Button
               onClick={() => setIsDonationModalOpen(true)}
               className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300"
             >
               Contribute Now
-            </Button>
+            </Button> */}
+            <DonateButton />
           </div>
         </div>
       </section>
-
-      {/* Donation Modal */}
-      <DonationModal
-        isOpen={isDonationModalOpen}
-        onClose={() => setIsDonationModalOpen(false)}
-      />
     </main>
   );
 };

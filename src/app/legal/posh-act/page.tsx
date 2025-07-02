@@ -1,4 +1,29 @@
-"use client";
+import { Metadata } from "next";
+
+// SEO metadata for PoSH Act page
+export const metadata: Metadata = {
+  title: "PoSH Act - Workplace Safety Framework",
+  description:
+    "Learn about the Prevention of Sexual Harassment (PoSH) Act 2013 and how Sashaktikaran Foundation ensures safe, respectful workplaces for all our team members and stakeholders.",
+  keywords: [
+    "PoSH Act",
+    "workplace safety",
+    "sexual harassment prevention",
+    "women safety",
+    "workplace rights",
+    "legal compliance",
+    "safe workplace",
+    "gender equality",
+  ],
+  openGraph: {
+    title: "PoSH Act - Workplace Safety Framework | Sashaktikaran Foundation",
+    description:
+      "Understanding the PoSH Act 2013 and our commitment to creating safe, respectful, and inclusive work environments.",
+    images: ["/workplace-safety.jpeg"],
+  },
+};
+
+("use client");
 
 import React from "react";
 import { motion } from "motion/react";

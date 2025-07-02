@@ -214,12 +214,6 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
                 </AnimatePresence>
 
                 {/* Thank you message */}
-                <div className="text-center p-4 bg-[#006b5e]/5 rounded-lg">
-                  <p className="text-sm text-[#006b5e] font-medium">
-                    Thank you for supporting our mission to empower children and
-                    communities! 🙏
-                  </p>
-                </div>
               </div>
 
               {/* Footer */}

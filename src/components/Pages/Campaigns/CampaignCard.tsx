@@ -1,16 +1,9 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
-import {
-  MapPin,
-  Users,
-  IndianRupee,
-  Target,
-  BookOpen,
-  Calendar,
-} from "lucide-react";
+import React from "react";
+
 import type { CaseStudy } from "@/data/caseStudies";
+import { BookOpen, Calendar, MapPin, Target, Users } from "lucide-react";
 
 interface CampaignCardProps {
   campaign: CaseStudy;
@@ -23,11 +16,7 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
     : null;
 
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
-      className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#006b5e]/30 transition-all shadow-sm hover:shadow-lg"
-    >
+    <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#006b5e]/30 transition-all shadow-sm hover:shadow-lg">
       <Link href={`/campaigns/${campaign.slug}`}>
         <div className="relative h-56 w-full">
           <Image
@@ -156,7 +145,7 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 

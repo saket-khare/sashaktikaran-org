@@ -1,4 +1,29 @@
-"use client";
+import { Metadata } from "next";
+
+// SEO metadata for JJ Act page
+export const metadata: Metadata = {
+  title: "Juvenile Justice (JJ) Act - Legal Framework",
+  description:
+    "Learn about the Juvenile Justice (Care and Protection of Children) Act 2015 and how Sashaktikaran Foundation aligns with this legal framework to protect children's rights and ensure their welfare.",
+  keywords: [
+    "Juvenile Justice Act",
+    "JJ Act 2015",
+    "child protection laws",
+    "children's rights",
+    "legal framework",
+    "child welfare",
+    "rehabilitation",
+    "child care",
+  ],
+  openGraph: {
+    title: "Juvenile Justice Act - Legal Framework | Sashaktikaran Foundation",
+    description:
+      "Understanding the JJ Act 2015 and our commitment to child protection, rehabilitation, and welfare in all our educational initiatives.",
+    images: ["/legal-framework.jpeg"],
+  },
+};
+
+("use client");
 
 import React from "react";
 import { motion } from "motion/react";

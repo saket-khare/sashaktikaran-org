@@ -16,6 +16,30 @@ import { notFound, useParams } from "next/navigation";
 import { useState } from "react";
 import DonationModal from "@/components/ui/donation-modal";
 
+// Generate metadata for individual campaign pages
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const campaign = caseStudies.find((study) => study.slug === params.slug);
+
+  if (!campaign) {
+    return {
+      title: "Campaign Not Found",
+      description: "The requested campaign could not be found.",
+    };
+  }
+
+  return {
+    title: campaign.metaTitle || `${campaign.title} | Sashaktikaran Foundation`,
+    description: campaign.metaDescription || campaign.summary,
+    keywords: campaign.tags,
+    openGraph: {
+      title: campaign.title,
+      description: campaign.summary,
+      images: [campaign.image.url],
+      type: "article",
+    },
+  };
+}
+
 export default function CampaignPage() {
   const { slug } = useParams();
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);

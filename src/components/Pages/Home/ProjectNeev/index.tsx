@@ -4,8 +4,15 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowRight, Users, BookOpen, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const ProjectNeev = () => {
+  const router = useRouter();
+
+  const handleReadFullStory = () => {
+    router.push("/campaigns/project-neev");
+  };
+
   return (
     <section className="py-10 lg:py-20 bg-gradient-to-br">
       <div className=" mx-auto px-4 md:px-8">
@@ -139,7 +146,10 @@ const ProjectNeev = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="pt-14 "
         >
-          <button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 flex items-center space-x-2 group hover:shadow-lg mx-auto">
+          <button
+            onClick={handleReadFullStory}
+            className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 flex items-center space-x-2 group hover:shadow-lg mx-auto"
+          >
             <span>Read the Full Story</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>

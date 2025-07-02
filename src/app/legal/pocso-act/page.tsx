@@ -1,4 +1,29 @@
-"use client";
+import { Metadata } from "next";
+
+// SEO metadata for POCSO Act page
+export const metadata: Metadata = {
+  title: "POCSO Act - Child Protection Framework",
+  description:
+    "Learn about the Protection of Children from Sexual Offences (POCSO) Act 2012 and how Sashaktikaran Foundation ensures child safety and protection in all our educational programs.",
+  keywords: [
+    "POCSO Act",
+    "child protection",
+    "sexual offences prevention",
+    "child safety",
+    "legal framework",
+    "children's safety",
+    "child welfare laws",
+    "education safety",
+  ],
+  openGraph: {
+    title: "POCSO Act - Child Protection Framework | Sashaktikaran Foundation",
+    description:
+      "Understanding the POCSO Act 2012 and our commitment to ensuring child safety and protection in all our educational initiatives.",
+    images: ["/child-protection.jpeg"],
+  },
+};
+
+("use client");
 
 import React from "react";
 import { motion } from "motion/react";

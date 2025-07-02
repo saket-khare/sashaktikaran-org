@@ -1,15 +1,35 @@
-"use client";
+import { Metadata } from "next";
 
-import React, { useState } from "react";
+// SEO metadata for campaigns page
+export const metadata: Metadata = {
+  title: "Our Campaigns - Active Education Initiatives",
+  description:
+    "Explore Sashaktikaran Foundation's active campaigns transforming rural communities through education. Support Project Neev and other initiatives that provide foundational learning to children in Madhya Pradesh.",
+  keywords: [
+    "education campaigns",
+    "Project Neev",
+    "rural education initiatives",
+    "community campaigns",
+    "foundational learning",
+    "support education",
+    "donate to education",
+    "active campaigns",
+  ],
+  openGraph: {
+    title: "Active Education Campaigns - Sashaktikaran Foundation",
+    description:
+      "Support our active campaigns bringing quality education to rural communities. Every contribution helps transform lives through foundational learning.",
+    images: ["/neev.jpeg"],
+  },
+};
+
 // import { motion } from "motion/react";
-import { caseStudies } from "@/data/caseStudies";
 import CampaignCard from "@/components/Pages/Campaigns/CampaignCard";
-import { Button } from "@/components/ui/button";
-import DonationModal from "@/components/ui/donation-modal";
+import { caseStudies } from "@/data/caseStudies";
+
+import DonateButton from "../about/_components/DonateButton";
 
 const CampaignsPage = () => {
-  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
-
   // Filter only campaigns (ongoing or planned status)
   const campaigns = caseStudies.filter(
     (study) => study.status === "ongoing" || study.status === "planned"
@@ -28,14 +48,7 @@ const CampaignsPage = () => {
             <p className="text-xl text-gray-600 mb-8">
               Transforming communities through education, one campaign at a time
             </p>
-            <div>
-              <Button
-                onClick={() => setIsDonationModalOpen(true)}
-                className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300"
-              >
-                Support a Campaign
-              </Button>
-            </div>
+            <DonateButton buttonText="Support a Campaign" />
           </div>
         </div>
       </section>
@@ -127,12 +140,7 @@ const CampaignsPage = () => {
               communities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setIsDonationModalOpen(true)}
-                className="bg-white text-[#006b5e] hover:bg-white/90 px-8 py-3 rounded-lg font-semibold transition-colors"
-              >
-                Support a Campaign
-              </button>
+              <DonateButton buttonText="Support a Campaign" />
               <button className="border-2 border-white text-white hover:bg-white hover:text-[#006b5e] px-8 py-3 rounded-lg font-semibold transition-colors">
                 Learn How to Help
               </button>
@@ -142,10 +150,10 @@ const CampaignsPage = () => {
       </section>
 
       {/* Donation Modal */}
-      <DonationModal
+      {/* <DonationModal
         isOpen={isDonationModalOpen}
         onClose={() => setIsDonationModalOpen(false)}
-      />
+      /> */}
     </main>
   );
 };
