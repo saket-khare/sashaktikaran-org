@@ -62,7 +62,7 @@ export const caseStudies: CaseStudy[] = [
       "Transforming rural education through local women educators, focusing on foundational literacy and numeracy for children aged 5-10 in Madhya Pradesh.",
     date: "2023-06-01",
     location: {
-      city: "Dewas, Tikamgarh, Narmadapuram",
+      city: "Dewas, Tikamgarh, Narmadapuram, Raisen, Rajgarh, Bhopal",
       state: "Madhya Pradesh",
       coordinates: {
         lat: 22.7526,
@@ -78,7 +78,7 @@ export const caseStudies: CaseStudy[] = [
     content: `
       <div class="space-y-6">
         <section>
-          <h3 class="text-2xl font-bold text-moss mb-4">The Challenge</h3>
+          <h3 class="text-2xl font-bold text-[#4996e4] mb-4">The Challenge</h3>
           <p class="text-gray-700 mb-4">India houses the world's largest youth population (66% under 35 years). However, only 51.25% of this population is deemed employable, primarily due to a lack of essential modern job skills. Foundational Literacy and Numeracy (FLN) and Self-Directed Learning are crucial to developing adaptability and essential 21st-century skills.</p>
           
           <p class="text-gray-700 mb-4">Rural India, comprising 63.4% of the population, faces severe educational infrastructure challenges:</p>
@@ -91,7 +91,7 @@ export const caseStudies: CaseStudy[] = [
         </section>
 
         <section>
-          <h3 class="text-2xl font-bold text-moss mb-4">The Opportunity</h3>
+          <h3 class="text-2xl font-bold text-[#4996e4] mb-4">The Opportunity</h3>
           <p class="text-gray-700 mb-4">High penetration of technology in rural areas presents unique opportunities:</p>
           <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
             <li>89.1% families have smartphones</li>
@@ -100,7 +100,7 @@ export const caseStudies: CaseStudy[] = [
         </section>
 
         <section>
-          <h3 class="text-2xl font-bold text-moss mb-4">Our Solution</h3>
+          <h3 class="text-2xl font-bold text-[#4996e4] mb-4">Our Solution</h3>
           <p class="text-gray-700 mb-4">Project Neev leverages internet access to implement a scalable, cost-effective, and democratized ed-tech learning model targeting rural children aged 5-10. The initiative focuses on:</p>
           <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
             <li>Building strong Foundational Literacy and Numeracy (FLN)</li>
@@ -109,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
         </section>
 
         <section>
-          <h3 class="text-2xl font-bold text-moss mb-4">Implementation Model</h3>
+          <h3 class="text-2xl font-bold text-[#4996e4] mb-4">Implementation Model</h3>
           <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
             <li>Provision of digital tablets to facilitate personalized, gamified learning</li>
             <li>Recruitment and training of local women ('Shiksha Saathis') proficient in basic literacy and numeracy</li>
@@ -119,14 +119,14 @@ export const caseStudies: CaseStudy[] = [
         </section>
 
         <section>
-          <h3 class="text-2xl font-bold text-moss mb-4">Impact & Vision</h3>
+          <h3 class="text-2xl font-bold text-[#4996e4] mb-4">Impact & Vision</h3>
           <p class="text-gray-700">Project Neev aims to bridge educational gaps in rural India, empowering children with foundational skills crucial for adapting to future job markets and improving the employability rate of the nation's youth.</p>
         </section>
       </div>
     `,
     impact: {
       livesChanged: 650,
-      amountDonated: 1000000,
+      amountDonated: 2214000,
       participants: 20,
     },
     tags: [
@@ -138,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     status: "ongoing",
     duration: {
-      start: "2023-06-01",
+      start: "2024-01-01",
     },
     partners: [
       "Department of Denotified Communities",
@@ -160,17 +160,11 @@ export const caseStudies: CaseStudy[] = [
       "Community-based education model",
     ],
     budget: {
-      total: 5326650,
-      raised: 1000000,
-      needed: 5326650,
+      total: 5521950,
+      raised: 2214000,
+      needed: 3307950,
     },
-    features: [
-      "Women Empowerment: Creating local employment opportunities for rural women",
-      "Democratization & Scalability: Minimal educational requirements and short training (2 days) for facilitators",
-      "Robust Monitoring: Real-time data analytics for detailed monitoring",
-      "Promoting Self-Learning: Cultivating self-paced learning habits critical for future adaptability",
-      "Responsible Ed-Tech Adoption: Controlled and confidence-building tech integration in education",
-    ],
+    features: ["Child Education & Women Empowerment"],
     gallery: [
       {
         url: "/neev.jpeg",

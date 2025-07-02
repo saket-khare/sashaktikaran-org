@@ -16,7 +16,7 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
     : null;
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#006b5e]/30 transition-all shadow-sm hover:shadow-lg">
+    <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#E46F49]/30 transition-all shadow-sm hover:shadow-lg">
       <Link href={`/campaigns/${campaign.slug}`}>
         <div className="relative h-56 w-full">
           <Image
@@ -32,8 +32,8 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
             <span
               className={`inline-block px-3 py-1 text-sm rounded-full font-medium ${
                 campaign.status === "ongoing"
-                  ? "bg-[#006b5e] text-white"
-                  : "bg-white/90 text-[#006b5e]"
+                  ? "bg-[#4996e4] text-white"
+                  : "bg-white/90 text-[#4996e4]"
               }`}
             >
               {campaign.status === "ongoing" ? "Active" : "Planned"}
@@ -56,23 +56,21 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
 
           {/* Location */}
           <div className="flex items-center gap-2 text-gray-500 mb-4">
-            <MapPin className="w-4 h-4 text-[#006b5e]" />
-            <span className="text-sm">
-              {campaign.location.city}, {campaign.location.state}
-            </span>
+            <MapPin className="w-4 h-4 text-[#4996e4]" />
+            <span className="text-sm">{campaign.location.city}</span>
           </div>
 
           {/* Key Features */}
           {campaign.features && campaign.features.length > 0 && (
             <div className="mb-4">
               <div className="flex items-center gap-2 mb-2">
-                <BookOpen className="w-4 h-4 text-[#006b5e]" />
-                <span className="text-sm font-medium text-[#006b5e]">
+                <BookOpen className="w-4 h-4 text-[#4996e4]" />
+                <span className="text-sm font-medium text-[#4996e4]">
                   Key Features
                 </span>
               </div>
               <div className="text-sm text-gray-600">
-                {campaign.features[0].split(":")[0]}
+                {campaign.features.join(", ")}
               </div>
             </div>
           )}
@@ -81,7 +79,7 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
           {campaign.budget && (
             <div className="mb-4">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-[#006b5e]">
+                <span className="text-sm font-medium text-[#E46F49]">
                   Funding Progress
                 </span>
                 <span className="text-sm text-gray-600">
@@ -90,7 +88,7 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                  className="bg-[#006b5e] h-2 rounded-full transition-all duration-300"
+                  className="bg-[#E46F49] h-2 rounded-full transition-all duration-300"
                   style={{ width: `${Math.min(fundingProgress || 0, 100)}%` }}
                 ></div>
               </div>
@@ -108,7 +106,7 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
           {/* Impact Stats */}
           <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
             <div className="text-center">
-              <Users className="w-5 h-5 text-[#006b5e] mx-auto mb-1" />
+              <Users className="w-5 h-5 text-[#4996e4] mx-auto mb-1" />
               <p className="text-sm font-semibold text-gray-900">
                 {campaign.impact.livesChanged.toLocaleString()}
               </p>
@@ -116,15 +114,15 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
             </div>
 
             <div className="text-center">
-              <Target className="w-5 h-5 text-[#006b5e] mx-auto mb-1" />
+              <Target className="w-5 h-5 text-[#4996e4] mx-auto mb-1" />
               <p className="text-sm font-semibold text-gray-900">
                 {campaign.impact.participants}
               </p>
-              <p className="text-xs text-gray-500">Partners</p>
+              <p className="text-xs text-gray-500">Districts</p>
             </div>
 
             <div className="text-center">
-              <Calendar className="w-5 h-5 text-[#006b5e] mx-auto mb-1" />
+              <Calendar className="w-5 h-5 text-[#4996e4] mx-auto mb-1" />
               <p className="text-sm font-semibold text-gray-900">
                 {new Date(campaign.date).toLocaleDateString("en-IN", {
                   month: "short",
@@ -137,8 +135,8 @@ const CampaignCard: React.FC<CampaignCardProps> = ({ campaign }) => {
 
           {/* Call to Action */}
           <div className="mt-6">
-            <div className="bg-[#006b5e]/5 hover:bg-[#006b5e]/10 transition-colors rounded-lg p-3 text-center">
-              <span className="text-[#006b5e] font-medium text-sm">
+            <div className="bg-[#4996e4]/5 hover:bg-[#4996e4]/10 transition-colors rounded-lg p-3 text-center">
+              <span className="text-[#4996e4] font-medium text-sm">
                 Learn More & Support →
               </span>
             </div>

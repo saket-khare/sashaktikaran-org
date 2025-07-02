@@ -18,7 +18,7 @@ const DonateButton = ({
       <Button
         onClick={() => setIsDonationModalOpen(true)}
         className={cn(
-          "bg-[#006b5e] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#006b5e]/90 transition-all duration-300 cursor-pointer",
+          "bg-[#4996e4] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#4996e4]/90 transition-all duration-300 cursor-pointer",
           className
         )}
       >

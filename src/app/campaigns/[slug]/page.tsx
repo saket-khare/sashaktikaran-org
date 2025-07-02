@@ -81,8 +81,8 @@ export default async function CampaignPage({
                 <span
                   className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${
                     campaign.status === "ongoing"
-                      ? "bg-[#006b5e] text-white"
-                      : "bg-white/90 text-[#006b5e]"
+                      ? "bg-[#4996e4] text-white"
+                      : "bg-white/90 text-[#4996e4]"
                   }`}
                 >
                   {campaign.status === "ongoing"
@@ -139,7 +139,7 @@ export default async function CampaignPage({
               <div>
                 {/* Summary */}
                 <div className="bg-white rounded-2xl p-8 mb-8 border border-gray-200 shadow-sm">
-                  <h2 className="text-2xl font-bold text-[#006b5e] mb-4">
+                  <h2 className="text-2xl font-bold text-[#E46F49] mb-4">
                     Campaign Overview
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
@@ -149,11 +149,11 @@ export default async function CampaignPage({
 
                 {/* Detailed Content */}
                 <div className="bg-white rounded-2xl p-8 mb-8 border border-gray-200 shadow-sm">
-                  <h2 className="text-2xl font-bold text-[#006b5e] mb-6">
+                  <h2 className="text-2xl font-bold text-[#E46F49] mb-6">
                     About This Campaign
                   </h2>
                   <div
-                    className="prose prose-lg max-w-none prose-headings:text-[#006b5e] prose-a:text-[#006b5e]"
+                    className="prose prose-lg max-w-none prose-headings:text-[#4996e4] prose-a:text-[#4996e4]"
                     dangerouslySetInnerHTML={{ __html: campaign.content }}
                   />
                 </div>
@@ -161,13 +161,13 @@ export default async function CampaignPage({
                 {/* Key Features */}
                 {campaign.features && campaign.features.length > 0 && (
                   <div className="bg-white rounded-2xl p-8 mb-8 border border-gray-200 shadow-sm">
-                    <h2 className="text-2xl font-bold text-[#006b5e] mb-6">
+                    <h2 className="text-2xl font-bold text-[#4996e4] mb-6">
                       Key Features
                     </h2>
                     <div className="space-y-4">
                       {campaign.features.map((feature, index) => (
                         <div key={index} className="flex items-start gap-4">
-                          <CheckCircle className="w-6 h-6 text-[#006b5e] flex-shrink-0 mt-1" />
+                          <CheckCircle className="w-6 h-6 text-[#4996e4] flex-shrink-0 mt-1" />
                           <div>
                             <h3 className="font-semibold text-gray-900 mb-1">
                               {feature.split(":")[0]}
@@ -187,7 +187,7 @@ export default async function CampaignPage({
                 {/* Gallery */}
                 {campaign.gallery && campaign.gallery.length > 0 && (
                   <div className="bg-white rounded-2xl p-8 mb-8 border border-gray-200 shadow-sm">
-                    <h2 className="text-2xl font-bold text-[#006b5e] mb-6">
+                    <h2 className="text-2xl font-bold text-[#4996e4] mb-6">
                       Gallery
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -214,22 +214,22 @@ export default async function CampaignPage({
                 )}
 
                 {/* Testimonials */}
-                {campaign.testimonials && campaign.testimonials.length > 0 && (
-                  <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-                    <h2 className="text-2xl font-bold text-[#006b5e] mb-6">
+                {/*{campaign.testimonials && campaign.testimonials.length > 0 && (
+                     <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+                    <h2 className="text-2xl font-bold text-[#4996e4] mb-6">
                       What People Say
                     </h2>
-                    <div className="space-y-6">
+                  <div className="space-y-6">
                       {campaign.testimonials.map((testimonial, index) => (
                         <div
                           key={index}
-                          className="bg-[#006b5e]/5 rounded-xl p-6"
+                          className="bg-[#4996e4]/5 rounded-xl p-6"
                         >
                           <blockquote className="text-lg italic text-gray-700 mb-4">
                             "{testimonial.quote}"
                           </blockquote>
                           <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center">
+                            <div className="w-12 h-12 bg-[#4996e4] rounded-full flex items-center justify-center">
                               <span className="text-white font-semibold text-lg">
                                 {testimonial.author.charAt(0)}
                               </span>
@@ -245,9 +245,9 @@ export default async function CampaignPage({
                           </div>
                         </div>
                       ))}
-                    </div>
+                    </div> 
                   </div>
-                )}
+                )} */}
               </div>
             </div>
 
@@ -257,7 +257,7 @@ export default async function CampaignPage({
                 {/* Funding Progress */}
                 {campaign.budget && (
                   <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                    <h3 className="text-xl font-bold text-[#006b5e] mb-4">
+                    <h3 className="text-xl font-bold text-[#E46F49  ] mb-4">
                       Campaign Funding
                     </h3>
 
@@ -272,7 +272,7 @@ export default async function CampaignPage({
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-3">
                         <div
-                          className="bg-[#006b5e] h-3 rounded-full transition-all duration-300"
+                          className="bg-[#E46F49] h-3 rounded-full transition-all duration-300"
                           style={{
                             width: `${Math.min(fundingProgress || 0, 100)}%`,
                           }}
@@ -283,7 +283,7 @@ export default async function CampaignPage({
                     <div className="space-y-3 mb-6">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Raised</span>
-                        <span className="font-semibold text-[#006b5e]">
+                        <span className="font-semibold text-[#E46F49]">
                           ₹{(campaign.budget.raised / 100000).toFixed(1)}L
                         </span>
                       </div>
@@ -295,7 +295,7 @@ export default async function CampaignPage({
                       </div>
                       <div className="flex justify-between border-t pt-3">
                         <span className="text-gray-600">Still needed</span>
-                        <span className="font-semibold text-[#006b5e]">
+                        <span className="font-semibold text-[#E46F49]">
                           ₹
                           {(
                             (campaign.budget.total - campaign.budget.raised) /
@@ -317,7 +317,7 @@ export default async function CampaignPage({
                       className="w-full mb-3"
                     />
 
-                    <Button className="bg-white text-[#006b5e] border border-[#006b5e] w-full px-8 py-4 rounded-lg font-semibold hover:bg-[#006b5e]/10 transition-all duration-300 cursor-pointer">
+                    <Button className="bg-white text-[#4996e4] border border-[#4996e4] w-full px-8 py-4 rounded-lg font-semibold hover:bg-[#4996e4]/10 transition-all duration-300 cursor-pointer">
                       Learn More
                     </Button>
                   </div>
@@ -325,12 +325,12 @@ export default async function CampaignPage({
 
                 {/* Impact Stats */}
                 <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                  <h3 className="text-xl font-bold text-[#006b5e] mb-4">
+                  <h3 className="text-xl font-bold text-[#E46F49] mb-4">
                     Impact So Far
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <Users className="w-6 h-6 text-[#006b5e]" />
+                      <Users className="w-6 h-6 text-[#E46F49]" />
                       <div>
                         <p className="text-sm text-gray-500">Lives Changed</p>
                         <p className="text-xl font-bold text-gray-900">
@@ -339,7 +339,7 @@ export default async function CampaignPage({
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Target className="w-6 h-6 text-[#006b5e]" />
+                      <Target className="w-6 h-6 text-[#E46F49]" />
                       <div>
                         <p className="text-sm text-gray-500">
                           Community Partners
@@ -350,7 +350,7 @@ export default async function CampaignPage({
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Heart className="w-6 h-6 text-[#006b5e]" />
+                      <Heart className="w-6 h-6 text-[#E46F49]" />
                       <div>
                         <p className="text-sm text-gray-500">Total Donated</p>
                         <p className="text-xl font-bold text-gray-900">
@@ -365,13 +365,13 @@ export default async function CampaignPage({
                 {/* Partners */}
                 {campaign.partners && campaign.partners.length > 0 && (
                   <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                    <h3 className="text-xl font-bold text-[#006b5e] mb-4">
+                    <h3 className="text-xl font-bold text-[#E46F49] mb-4">
                       Our Partners
                     </h3>
                     <ul className="space-y-3">
                       {campaign.partners.map((partner, index) => (
                         <li key={index} className="flex items-center gap-3">
-                          <CheckCircle className="w-5 h-5 text-[#006b5e] flex-shrink-0" />
+                          <CheckCircle className="w-5 h-5 text-[#E46F49] flex-shrink-0" />
                           <span className="text-gray-700">{partner}</span>
                         </li>
                       ))}
@@ -381,14 +381,14 @@ export default async function CampaignPage({
 
                 {/* Tags */}
                 <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                  <h3 className="text-xl font-bold text-[#006b5e] mb-4">
+                  <h3 className="text-xl font-bold text-[#E46F49] mb-4">
                     Tags
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {campaign.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-[#006b5e]/10 text-[#006b5e] rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-[#4996e4]/10 text-[#4996e4] rounded-full text-sm font-medium"
                       >
                         {tag}
                       </span>

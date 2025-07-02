@@ -57,12 +57,12 @@ const Impact = () => {
   const impactStats = [
     {
       number: 19,
-      label: "locations across 4 states",
+      label: "institutions across 6 districts",
       icon: MapPin,
     },
     {
       number: 20,
-      label: "women trained as Shiksha Sathis",
+      label: "women impacted",
       suffix: "+",
       icon: RiWomenLine,
     },
@@ -107,14 +107,27 @@ const Impact = () => {
   };
 
   return (
-    <section className="py-10 lg:py-20 w-full">
+    <section className="py-10 lg:py-20 w-full bg-[#fff]">
       <div className="px-4 md:px-8">
+        {/* Decorative wavy divider at top */}
+        {/* <div className="relative mb-8">
+          <svg
+            className="absolute -top-10 left-0 w-full h-8 text-[#E46F49]"
+            viewBox="0 0 1200 40"
+            fill="currentColor"
+          >
+            <path d="M0,20 Q300,0 600,20 T1200,20 L1200,40 L0,40 Z" />
+          </svg>
+        </div> */}
+
         {/* Section Heading */}
         <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
-            Changing Lives, One Village at a Time
+          <h2 className="text-3xl md:text-4xl font-bold text-[#E46F49] mb-4">
+            Changing Lives,{" "}
+            <span className="text-[#4996e4] font-black">One Village</span> at a
+            Time
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="text-gray-700 max-w-3xl mx-auto text-lg">
             Every number represents a life touched, a dream realized, and a
             community transformed.
           </p>
@@ -143,14 +156,14 @@ const Impact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow hover:shadow-md transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition-all duration-300 border border-gray-100"
                 >
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-[#4996e4] rounded-full flex items-center justify-center mr-4">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-[#006b5e]">
+                      <div className="text-3xl font-bold text-[#4996e4]">
                         <CountUp
                           end={stat.number}
                           duration={2.5}
@@ -173,10 +186,11 @@ const Impact = () => {
         {/* Video Reel Section */}
         <div className="mt-16">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-[#006b5e] mb-4">
-              Watch Our Impact Stories
+            <h3 className="text-2xl font-bold text-[#E46F49] mb-4">
+              Watch Our Impact{" "}
+              <span className="text-[#4996e4] font-black">Stories</span>
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-700 max-w-2xl mx-auto">
               See how we're making a difference in rural communities through
               education
             </p>
@@ -191,7 +205,7 @@ const Impact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-[#006b5e]/3 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
                 <div className="relative aspect-[9/16]">
                   <video
@@ -209,32 +223,26 @@ const Impact = () => {
                       onClick={() => togglePlay(index)}
                       className={cn(
                         "w-16 h-16 bg-white/90 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110",
-                        playingStates[index] && "bg-white/10 text-white"
+                        playingStates[index] && "bg-[#E46F49]/90 text-white"
                       )}
                     >
                       {playingStates[index] ? (
                         <Pause
                           className={cn(
-                            "w-8 h-8 text-[#006b5e]",
+                            "w-8 h-8 text-[#E46F49]",
                             playingStates[index] && "text-white"
                           )}
                         />
                       ) : (
                         <Play
                           className={cn(
-                            "w-8 h-8 text-[#006b5e]",
+                            "w-8 h-8 text-[#E46F49]",
                             playingStates[index] && "text-white"
                           )}
                         />
                       )}
                     </button>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    {video.title}
-                  </h4>
-                  <p className="text-gray-600">{video.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -248,7 +256,7 @@ const Impact = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-[#006b5e]/3 rounded-2xl overflow-hidden shadow-lg"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100"
             >
               <div className="relative aspect-[9/16]">
                 <video
@@ -266,20 +274,21 @@ const Impact = () => {
                     onClick={() => togglePlay(currentVideo)}
                     className={cn(
                       "w-16 h-16 bg-white/90 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110",
-                      playingStates[currentVideo] && "bg-white/10 text-white"
+                      playingStates[currentVideo] &&
+                        "bg-[#E46F49]/90 text-white"
                     )}
                   >
                     {playingStates[currentVideo] ? (
                       <Pause
                         className={cn(
-                          "w-8 h-8 text-[#006b5e]",
+                          "w-8 h-8 text-[#E46F49]",
                           playingStates[currentVideo] && "text-white"
                         )}
                       />
                     ) : (
                       <Play
                         className={cn(
-                          "w-8 h-8 text-[#006b5e]",
+                          "w-8 h-8 text-[#E46F49]",
                           playingStates[currentVideo] && "text-white"
                         )}
                       />
@@ -287,23 +296,15 @@ const Impact = () => {
                   </button>
                 </div>
               </div>
-              <div className="p-6">
-                <h4 className="text-xl font-bold text-gray-900 mb-2">
-                  {videos[currentVideo].title}
-                </h4>
-                <p className="text-gray-600">
-                  {videos[currentVideo].description}
-                </p>
-              </div>
             </motion.div>
 
             {/* Mobile Navigation */}
             <div className="flex justify-between items-center mt-6">
               <button
                 onClick={prevVideo}
-                className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-lg border border-gray-100"
               >
-                <ChevronLeft className="w-6 h-6 text-[#006b5e]" />
+                <ChevronLeft className="w-6 h-6 text-[#E46F49]" />
               </button>
               <div className="flex gap-2">
                 {videos.map((_, index) => (
@@ -313,21 +314,32 @@ const Impact = () => {
                     className={cn(
                       "w-2 h-2 rounded-full transition-all duration-300",
                       currentVideo === index
-                        ? "bg-[#006b5e] scale-125"
-                        : "bg-[#006b5e]/30 hover:bg-[#006b5e]/50"
+                        ? "bg-[#E46F49] scale-125"
+                        : "bg-[#E46F49]/30 hover:bg-[#E46F49]/50"
                     )}
                   />
                 ))}
               </div>
               <button
                 onClick={nextVideo}
-                className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                className="w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-110 hover:shadow-lg border border-gray-100"
               >
-                <ChevronRight className="w-6 h-6 text-[#006b5e]" />
+                <ChevronRight className="w-6 h-6 text-[#E46F49]" />
               </button>
             </div>
           </div>
         </div>
+
+        {/* Decorative wavy divider at bottom */}
+        {/* <div className="relative mt-8">
+          <svg
+            className="absolute -bottom-10 left-0 w-full h-8 text-[#E46F49] rotate-180"
+            viewBox="0 0 1200 40"
+            fill="currentColor"
+          >
+            <path d="M0,20 Q300,0 600,20 T1200,20 L1200,40 L0,40 Z" />
+          </svg>
+        </div> */}
       </div>
     </section>
   );

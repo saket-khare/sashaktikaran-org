@@ -38,18 +38,18 @@ const AboutPage = () => {
       icon: Users,
     },
     {
-      number: "19",
-      label: "Locations across Madhya Pradesh",
+      number: "6",
+      label: "Districts across Madhya Pradesh",
       icon: MapPin,
     },
     {
       number: "20",
-      label: "Women recruited as Shiksha Saathis",
+      label: "Women recruited",
       icon: Heart,
     },
     {
-      number: "10",
-      label: "Government Schools under Project Neev",
+      number: "20",
+      label: "Government Institutes",
       icon: School,
     },
   ];
@@ -75,11 +75,12 @@ const AboutPage = () => {
   return (
     <main className="pt-16">
       {/* Hero Section */}
-      <section className="bg-[#006b5e]/5 py-20">
+      <section className="bg-[#4996e4]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
-              Empowering children's futures
+            <h1 className="text-4xl md:text-5xl font-bold text-[#E46F49] mb-6">
+              Empowering <span className="text-[#4996e4]">children's</span>{" "}
+              futures
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Offering children hope, knowledge, and a path to a brighter
@@ -112,10 +113,10 @@ const AboutPage = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 bg-[#006b5e]/5">
+      <section className="py-20 bg-[#4996e4]/5">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#E46F49] mb-4">
               Our achievements
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -131,10 +132,10 @@ const AboutPage = () => {
                   key={index}
                   className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-[#4996e4] rounded-full flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold text-[#006b5e] mb-2">
+                  <h3 className="text-3xl font-bold text-[#4996e4] mb-2">
                     {achievement.number}
                   </h3>
                   <p className="text-gray-600">{achievement.label}</p>
@@ -149,7 +150,7 @@ const AboutPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-4">
               Our Team
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -175,7 +176,7 @@ const AboutPage = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-[#006b5e]">{member.role}</p>
+                  <p className="text-[#4996e4]">{member.role}</p>
                 </div>
               </div>
             ))}
@@ -184,10 +185,10 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#006b5e]/5">
+      <section className="py-20 bg-[#4996e4]/5">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-6">
               Become A Part Of This Life-Changing Journey
             </h2>
             <p className="text-lg text-gray-600 mb-8">

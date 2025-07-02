@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { ArrowRight, Handshake, Heart, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { BiRupee } from "react-icons/bi";
@@ -17,6 +18,8 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
       description: "Sponsor a child's education or a Shiksha Sathi's training.",
       subDescription:
         "Your contribution directly supports our mission of empowering rural communities through education.",
+      action: () => onContributeClick?.(),
+      color: "#4996e4", // Blue
     },
     {
       icon: Handshake,
@@ -24,6 +27,18 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
       description: "Collaborate with us for scale, tech, or outreach.",
       subDescription:
         "Join hands with us to create lasting impact through strategic partnerships and collaborations.",
+      action: () => {
+        const subject = encodeURIComponent(
+          "Partnership Inquiry - Sashaktikaran Foundation"
+        );
+        const body = encodeURIComponent(
+          "Hello,\n\nI'm interested in partnering with Sashaktikaran Foundation. Please provide more information about partnership opportunities.\n\nBest regards,\n[Your Name]"
+        );
+        window.open(
+          `mailto:info@sashaktikaran.org?subject=${subject}&body=${body}`
+        );
+      },
+      color: "#E46F49", // Orange
     },
     {
       icon: Users,
@@ -31,18 +46,30 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
       description: "Offer your skills in content, design, operations & more.",
       subDescription:
         "Share your expertise and be part of our journey to transform rural education.",
+      action: () => {
+        const subject = encodeURIComponent(
+          "Volunteer Application - Sashaktikaran Foundation"
+        );
+        const body = encodeURIComponent(
+          "Hello,\n\nI'm interested in volunteering with Sashaktikaran Foundation. Please provide more information about volunteer opportunities.\n\nBest regards,\n[Your Name]"
+        );
+        window.open(
+          `mailto:info@sashaktikaran.org?subject=${subject}&body=${body}`
+        );
+      },
+      color: "#4996e4", // Blue
     },
   ];
 
   return (
-    <section className="py-10 lg:py-20 bg-[#006b5e] text-white">
+    <section className="py-10 lg:py-0  text-white">
       <div className=" mx-auto px-4 md:px-8">
         {/* [AI] Section header */}
         <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Help Us Educate, Empower, and Transform
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[#E46F49]">
+            Help Us Educate, Empower and Transform
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg text-[#000] max-w-3xl mx-auto">
             Every contribution, no matter the size or form, creates ripples of
             change across rural India
           </p>
@@ -59,17 +86,24 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/10 p-8 rounded-2xl hover:bg-white/15 transition-all duration-300 group cursor-pointer backdrop-blur-sm"
+                className="p-8 rounded-2xl hover:bg-white/15 transition-all duration-300 group cursor-pointer backdrop-blur-sm border border-white/20"
+                style={{ backgroundColor: `${path.color}` }}
+                onClick={path.action}
               >
                 {/* Icon */}
                 <div className="mb-6">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <IconComponent className="w-6 h-6 text-[#006b5e]" />
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <IconComponent
+                      className="w-6 h-6"
+                      style={{ color: path.color }}
+                    />
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold mb-4">{path.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  {path.title}
+                </h3>
                 <p className="text-white/90 leading-relaxed mb-4">
                   {path.description}
                 </p>
@@ -79,7 +113,9 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
 
                 {/* Learn more link */}
                 <div className="flex items-center text-white group-hover:text-white/80 transition-colors">
-                  <span className="mr-2 font-medium">Learn more</span>
+                  <span className="mr-2 font-medium">
+                    {path.title === "Donate" ? "Donate Now" : "Get Started"}
+                  </span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </motion.div>
@@ -88,7 +124,7 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
         </div>
 
         {/* [AI] Additional context */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -96,8 +132,11 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
         >
           <div className="bg-white/10 p-8 rounded-2xl max-w-4xl mx-auto backdrop-blur-sm">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <Heart className="w-6 h-6 text-[#006b5e]" />
+              <div
+                className="w-12 h-12 bg-white rounded-full flex items-center justify-center"
+                style={{ backgroundColor: "#E46F49" }}
+              >
+                <Heart className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold">Your Impact Multiplies</h3>
             </div>
@@ -107,7 +146,7 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
               Together, we can create lasting change through education.
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* [AI] Main CTA */}
         <motion.div
@@ -115,15 +154,16 @@ const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center pt-10"
+          className="text-center pt-0 pb-10"
         >
-          <button
+          <Button
             onClick={onContributeClick}
-            className="bg-white text-[#006b5e] px-12 py-4 rounded-lg text-xl font-medium hover:bg-white/90 transition-all duration-300 inline-flex items-center space-x-3 group hover:shadow-lg"
+            variant="default"
+            className="bg-[#4996e4] cursor-pointer hover:bg-[#4996e4]/90"
           >
             <span>Support the Mission</span>
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </button>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </motion.div>
       </div>
     </section>

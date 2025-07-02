@@ -7,42 +7,51 @@ const OurModel = () => {
   const modelPoints = [
     {
       icon: Users,
-      title: "Train Rural Women as Shiksha Sathis",
+      title: "Upskill Women with 21st Century skills",
       description:
         "We equip local women with the tools and training to become educators.",
-      bgColor: "bg-blue-500",
+      bgColor: "#E46F49", // Radiate
+      textColor: "text-white",
+      iconColor: "#FFFADD", // Pearl for icon
     },
     {
       icon: BookOpen,
-      title: "Teach Foundational Education",
-      description: "Children learn language, math, values, and curiosity.",
-      bgColor: "bg-green-500",
+      title: "Provide Quality Education",
+      description: "Preparing children for the fast-changing world.",
+      bgColor: "#4996e4", // Radiate
+      textColor: "text-white",
+      iconColor: "#FFFADD", // Pearl for icon
     },
     {
       icon: Wifi,
       title: "Bridge the Digital Divide",
       description:
         "We use affordable tech to deliver curriculum and mentorship at scale.",
-      bgColor: "bg-purple-500",
+      bgColor: "#4996e4", // Radiate
+      textColor: "text-white",
+      iconColor: "#FFFADD", // Pearl for icon
     },
     {
       icon: MapPin,
       title: "Rooted in Community, Built for Scale",
       description:
         "Every program is adapted to local needs, ensuring relevance and trust.",
-      bgColor: "bg-orange-500",
+      bgColor: "#E46F49", // Radiate
+      textColor: "text-white",
+      iconColor: "#FFFADD", // Pearl for icon
     },
   ];
 
   return (
-    <section className="py-20 bg-[#006b5e] w-full">
-      <div className=" mx-auto px-4 md:px-8">
+    <section className="py-20 w-full" style={{ backgroundColor: "#fff" }}>
+      <div className="mx-auto px-4 md:px-8">
         {/* [AI] Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            How We Make It Happen
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#E46F49] mb-4">
+            How We Make It{" "}
+            <span className="text-[#4996e4] font-black">Happen</span>
           </h2>
-          <p className="text-lg text-white max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             We believe sustainable change happens when we empower local
             communities to lead their own transformation
           </p>
@@ -55,20 +64,27 @@ const OurModel = () => {
             return (
               <div
                 key={index}
-                className="bg-white/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="p-8 rounded-2xl transition-shadow duration-300"
+                style={{ backgroundColor: point.bgColor }}
               >
                 {/* Icon */}
                 <div
                   className={`w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6`}
+                  style={{ backgroundColor: point.iconColor }}
                 >
-                  <IconComponent className="w-8 h-8 text-[#006b5e]" />
+                  <IconComponent
+                    className="w-8 h-8"
+                    style={{ color: point.bgColor }}
+                  />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-4 leading-tight">
+                <h3
+                  className={`text-xl font-bold mb-4 leading-tight ${point.textColor}`}
+                >
                   {point.title}
                 </h3>
-                <p className="text-white leading-relaxed">
+                <p className={`${point.textColor} leading-relaxed`}>
                   {point.description}
                 </p>
               </div>

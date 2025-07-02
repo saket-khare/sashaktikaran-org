@@ -71,7 +71,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006b5e] focus:border-[#006b5e] transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4996e4] focus:border-[#4996e4] transition-colors"
             placeholder="Your full name"
           />
         </div>
@@ -90,7 +90,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006b5e] focus:border-[#006b5e] transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4996e4] focus:border-[#4996e4] transition-colors"
             placeholder="your.email@example.com"
           />
         </div>
@@ -110,7 +110,7 @@ const ContactForm = () => {
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006b5e] focus:border-[#006b5e] transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4996e4] focus:border-[#4996e4] transition-colors"
             placeholder="+91 98765 43210"
           />
         </div>
@@ -128,7 +128,7 @@ const ContactForm = () => {
             value={formData.inquiryType}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006b5e] focus:border-[#006b5e] transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4996e4] focus:border-[#4996e4] transition-colors"
           >
             {inquiryTypes.map((type) => (
               <option key={type.value} value={type.value}>
@@ -153,7 +153,7 @@ const ContactForm = () => {
           value={formData.subject}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006b5e] focus:border-[#006b5e] transition-colors"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4996e4] focus:border-[#4996e4] transition-colors"
           placeholder="Brief subject of your message"
         />
       </div>
@@ -172,7 +172,7 @@ const ContactForm = () => {
           onChange={handleInputChange}
           required
           rows={5}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006b5e] focus:border-[#006b5e] transition-colors resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4996e4] focus:border-[#4996e4] transition-colors resize-none"
           placeholder="Tell us how we can help you..."
         />
       </div>
@@ -180,7 +180,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90 disabled:bg-gray-400 text-white py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+        className="w-full bg-[#4996e4] hover:bg-[#4996e4]/90 disabled:bg-gray-400 text-white py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
       >
         {isSubmitting ? (
           <>

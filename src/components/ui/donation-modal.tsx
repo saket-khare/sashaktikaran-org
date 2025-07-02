@@ -56,7 +56,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
             >
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <h2 className="text-xl font-bold text-[#006b5e]">
+                <h2 className="text-xl font-bold text-[#4996e4]">
                   Support Our Mission
                 </h2>
                 <Button
@@ -75,7 +75,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
                   onClick={() => setActiveTab("qr")}
                   className={`flex-1 py-3 px-4 text-sm font-medium text-center transition-colors ${
                     activeTab === "qr"
-                      ? "text-[#006b5e] border-b-2 border-[#006b5e] bg-[#006b5e]/5"
+                      ? "text-[#4996e4] border-b-2 border-[#4996e4] bg-[#4996e4]/5"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -85,7 +85,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
                   onClick={() => setActiveTab("details")}
                   className={`flex-1 py-3 px-4 text-sm font-medium text-center transition-colors ${
                     activeTab === "details"
-                      ? "text-[#006b5e] border-b-2 border-[#006b5e] bg-[#006b5e]/5"
+                      ? "text-[#4996e4] border-b-2 border-[#4996e4] bg-[#4996e4]/5"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
@@ -161,17 +161,6 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
                       transition={{ duration: 0.2 }}
                       className="space-y-4"
                     >
-                      {/* QR Code Text */}
-                      <div className="text-center">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                          Scan to Donate
-                        </h3>
-                        <p className="text-sm text-gray-600">
-                          Scan the QR code with any UPI app to make a quick
-                          donation
-                        </p>
-                      </div>
-
                       {/* QR Code Image */}
                       <div className="flex justify-center">
                         <div className="relative w-full h-full rounded-lg overflow-hidden border border-gray-200">
@@ -220,7 +209,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
               <div className="p-6 border-t border-gray-200">
                 <Button
                   onClick={onClose}
-                  className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90"
+                  className="w-full cursor-pointer bg-[#4996e4] hover:bg-[#4996e4]/90"
                 >
                   Close
                 </Button>

@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 
 import { Button } from "@/components/ui/button";
 import {
-  Clock,
   Facebook,
   Instagram,
   Linkedin,
@@ -33,39 +32,11 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import ContactInfo from "./_components/Card";
 import ContactForm from "./_components/form";
+import Link from "next/link";
 
 const ContactPage = () => {
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Visit Our Office",
-      details: ["123 Education Street", "New Delhi, India 110001"],
-      action: "Get Directions",
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: ["+91 123 456 7890"],
-      action: "Call Now",
-    },
-    {
-      icon: Mail,
-      title: "Email Us",
-      details: ["contact@sashaktikaran.org"],
-      action: "Send Email",
-    },
-    {
-      icon: Clock,
-      title: "Office Hours",
-      details: [
-        "Monday - Friday: 9:00 AM - 6:00 PM",
-        "Saturday: 10:00 AM - 4:00 PM",
-      ],
-      action: "",
-    },
-  ];
-
   const socialLinks = [
     {
       name: "Facebook",
@@ -90,21 +61,21 @@ const ContactPage = () => {
   return (
     <main className="pt-16">
       {/* Hero Section */}
-      <section className="bg-[#006b5e]/5 py-20">
+      <section className="bg-[#4996e4]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
-              Get In Touch
+            <h1 className="text-4xl md:text-5xl font-bold text-[#4996e4] mb-6">
+              Get In <span className="text-[#E46F49]">Touch</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               We'd love to hear from you. Send us a message and we'll respond as
               soon as possible.
             </p>
-            <div>
-              <Button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
+            <Link href="/contact">
+              <Button className="bg-[#4996e4] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#4996e4]/90 transition-all duration-300">
                 Send Us a Message
               </Button>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -113,8 +84,8 @@ const ContactPage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
-              Contact Information
+            <h2 className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-4">
+              Contact <span className="text-[#E46F49]">Information</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Multiple ways to reach us for any questions, partnerships, or
@@ -122,36 +93,7 @@ const ContactPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactInfo.map((info, index) => {
-              const IconComponent = info.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow"
-                >
-                  <div className="w-16 h-16 bg-[#006b5e]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="w-8 h-8 text-[#006b5e]" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    {info.title}
-                  </h3>
-                  <div className="space-y-1 mb-4">
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm">
-                        {detail}
-                      </p>
-                    ))}
-                  </div>
-                  {info.action && (
-                    <button className="text-[#006b5e] text-sm font-medium hover:text-[#006b5e]/80 transition-colors">
-                      {info.action} →
-                    </button>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+          <ContactInfo />
         </div>
       </section>
 
@@ -162,7 +104,7 @@ const ContactPage = () => {
             {/* Contact Form */}
             <div>
               <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-                <h2 className="text-2xl font-bold text-[#006b5e] mb-6">
+                <h2 className="text-2xl font-bold text-[#4996e4] mb-6">
                   Send Us a Message
                 </h2>
 
@@ -176,10 +118,21 @@ const ContactPage = () => {
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
                 <div className="h-64 bg-gray-100 flex items-center justify-center">
                   <div className="text-center">
-                    <MapPin className="w-12 h-12 text-[#006b5e] mx-auto mb-2" />
-                    <p className="text-gray-600">Interactive Map</p>
+                    <MapPin className="w-12 h-12 text-[#4996e4] mx-auto mb-2" />
+                    <p className="text-gray-600">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1780.4183197753189!2d77.44249286280831!3d23.18544678814618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c439581824d1d%3A0x7862fd7c89a3d316!2sPriyadarshini%20Adhishthan!5e1!3m2!1sen!2sin!4v1751471532763!5m2!1sen!2sin"
+                        width="600"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </p>
                     <p className="text-sm text-gray-500">
-                      123 Education Street, New Delhi
+                      A-3, 501, Priyadarshini Adhishthan, Bawadiya Kalan,
+                      Bhopal, MP - 462026
                     </p>
                   </div>
                 </div>
@@ -187,7 +140,7 @@ const ContactPage = () => {
 
               {/* Social Media */}
               <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                <h3 className="text-xl font-bold text-[#006b5e] mb-4">
+                <h3 className="text-xl font-bold text-[#4996e4] mb-4">
                   Follow Us
                 </h3>
                 <p className="text-gray-600 mb-6">
@@ -202,47 +155,12 @@ const ContactPage = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 bg-[#006b5e]/10 rounded-full flex items-center justify-center hover:bg-[#006b5e] hover:text-white transition-colors group"
+                        className="w-12 h-12 bg-[#4996e4]/10 rounded-full flex items-center justify-center hover:bg-[#4996e4] hover:text-white transition-colors group"
                       >
-                        <IconComponent className="w-6 h-6 text-[#006b5e] group-hover:text-white" />
+                        <IconComponent className="w-6 h-6 text-[#4996e4] group-hover:text-white" />
                       </a>
                     );
                   })}
-                </div>
-              </div>
-
-              {/* Quick Contact */}
-              <div className="bg-[#006b5e]/5 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-[#006b5e] mb-4">
-                  Quick Contact
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#006b5e] rounded-full flex items-center justify-center">
-                      <Phone className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">
-                        Emergency Support
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        Available 24/7 for urgent matters
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#006b5e] rounded-full flex items-center justify-center">
-                      <Mail className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-900">
-                        General Inquiries
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        Response within 24 hours
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -254,7 +172,7 @@ const ContactPage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

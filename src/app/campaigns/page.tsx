@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 // SEO metadata for campaigns page
 export const metadata: Metadata = {
-  title: "Our Campaigns - Active Education Initiatives",
+  title: "Our Projects - Active Education Initiatives",
   description:
     "Explore Sashaktikaran Foundation's active campaigns transforming rural communities through education. Support Project Neev and other initiatives that provide foundational learning to children in Madhya Pradesh.",
   keywords: [
@@ -28,6 +28,7 @@ import CampaignCard from "@/components/Pages/Campaigns/CampaignCard";
 import { caseStudies } from "@/data/caseStudies";
 
 import DonateButton from "../about/_components/DonateButton";
+import { Button } from "@/components/ui/button";
 
 const CampaignsPage = () => {
   // Filter only campaigns (ongoing or planned status)
@@ -39,16 +40,16 @@ const CampaignsPage = () => {
     <main className="pt-16">
       {/* Hero Section */}
 
-      <section className="bg-[#006b5e]/5 py-20">
+      <section className="bg-[#4996e4]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
-              Our Campaigns
+            <h1 className="text-4xl md:text-5xl font-bold text-[#4996e4] mb-6">
+              Our Projects
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Transforming communities through education, one campaign at a time
+              Transforming communities through education, one project at a time
             </p>
-            <DonateButton buttonText="Support a Campaign" />
+            <DonateButton buttonText="Support a Project" />
           </div>
         </div>
       </section>
@@ -58,7 +59,7 @@ const CampaignsPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-2">
                 {campaigns
                   .reduce(
                     (total, campaign) => total + campaign.impact.livesChanged,
@@ -71,21 +72,21 @@ const CampaignsPage = () => {
             </div>
 
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-2">
                 {campaigns.length}
               </div>
-              <div className="text-gray-600">Active Campaigns</div>
+              <div className="text-gray-600">Active Projects</div>
             </div>
 
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-2">
                 {campaigns.reduce(
                   (total, campaign) => total + campaign.impact.participants,
                   0
                 )}
                 +
               </div>
-              <div className="text-gray-600">Community Partners</div>
+              <div className="text-gray-600">Students</div>
             </div>
           </div>
         </div>
@@ -95,11 +96,11 @@ const CampaignsPage = () => {
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
-              Active Campaigns
+            <h2 className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-4">
+              Active Projects
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Each campaign represents our commitment to creating lasting change
+              Each project represents our commitment to creating lasting change
               in rural communities through education and empowerment.
             </p>
           </div>
@@ -115,11 +116,11 @@ const CampaignsPage = () => {
           ) : (
             <div className="text-center py-12">
               <div className="bg-white rounded-xl p-8 max-w-md mx-auto border border-gray-200">
-                <h3 className="text-xl font-semibold text-[#006b5e] mb-2">
-                  No Active Campaigns
+                <h3 className="text-xl font-semibold text-[#4996e4] mb-2">
+                  No Active Projects
                 </h3>
                 <p className="text-gray-600">
-                  We're currently developing new campaigns. Check back soon!
+                  We're currently developing new projects. Check back soon!
                 </p>
               </div>
             </div>
@@ -128,7 +129,7 @@ const CampaignsPage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-[#006b5e] text-white">
+      <section className="py-16 bg-[#4996e4] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -139,12 +140,11 @@ const CampaignsPage = () => {
               contribution helps us reach more children and empower more
               communities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <DonateButton buttonText="Support a Campaign" />
-              <button className="border-2 border-white text-white hover:bg-white hover:text-[#006b5e] px-8 py-3 rounded-lg font-semibold transition-colors">
-                Learn How to Help
-              </button>
-            </div>
+
+            <DonateButton
+              buttonText="Support a Project"
+              className="bg-[#E46F49] hover:bg-[#E46F49]/90"
+            />
           </div>
         </div>
       </section>

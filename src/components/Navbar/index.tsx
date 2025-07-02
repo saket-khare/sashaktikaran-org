@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "About", path: "/about" },
-    { name: "Campaigns", path: "/campaigns" },
+    { name: "Projects", path: "/campaigns" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -75,7 +75,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-16 relative">
           {/* Logo and brand name */}
           <div className="flex items-center">
             <Link
@@ -85,11 +85,11 @@ const Navbar = () => {
               {/* Logo placeholder - replace src with your logo */}
 
               <Image
-                src="/image.png"
+                src="/logo-black.png"
                 alt="Sashaktikaran"
                 width={100}
                 height={100}
-                className="h-10 w-auto rounded-full"
+                className="h-10 w-auto"
               />
               {/* <div className="w-10 h-10 bg-[#006b5e] rounded-full transition-transform duration-300 group-hover:scale-105"></div>
               <span className="text-xl font-bold text-[#006b5e]">
@@ -99,13 +99,13 @@ const Navbar = () => {
           </div>
 
           {/* Desktop menu - centered */}
-          <div className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex space-x-8">
+          <div className="hidden md:flex items-center justify-center flex-1 ">
+            <div className="flex space-x-8 absolute left-1/2 -translate-x-1/2">
               {navLinks.map((link, index) => (
                 <div key={link.name}>
                   <Link
                     href={link.path}
-                    className="relative text-gray-600 hover:text-[#006b5e] px-3 py-2 text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#006b5e] after:transition-all hover:after:w-full"
+                    className="relative text-gray-600 hover:text-[#E46F49] px-3 py-2 text-sm font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#E46F49] after:transition-all hover:after:w-full"
                   >
                     {link.name}
                   </Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <Button
               onClick={() => setIsDonationModalOpen(true)}
-              className="ml-8 bg-[#006b5e] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 hover:shadow-md"
+              className="ml-8 bg-[#4996e4] text-white px-6 py-2 rounded hover:bg-[#4996e4]/90 transition-all duration-300 hover:shadow-md cursor-pointer font-bold"
             >
               Contribute Now
             </Button>
@@ -143,7 +143,7 @@ const Navbar = () => {
                     exit="exit"
                     className="absolute inset-0 flex items-center justify-center"
                   >
-                    <XIcon className="h-6 w-6 text-[#006b5e]" />
+                    <XIcon className="h-6 w-6 text-[#4996e4]" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -154,7 +154,7 @@ const Navbar = () => {
                     exit="exit"
                     className="absolute inset-0 flex items-center justify-center"
                   >
-                    <MenuIcon className="h-6 w-6 text-[#006b5e]" />
+                    <MenuIcon className="h-6 w-6 text-[#4996e4]" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -192,7 +192,7 @@ const Navbar = () => {
                     setIsMenuOpen(false);
                     setIsDonationModalOpen(true);
                   }}
-                  className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90 text-white py-3 rounded-lg shadow-sm"
+                  className="w-full bg-[#4996e4] hover:bg-[#4996e4]/90 text-white py-3 rounded-lg shadow-sm"
                 >
                   Contribute Now
                 </Button>

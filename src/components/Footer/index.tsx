@@ -21,14 +21,14 @@ const Footer = () => {
   const footerLinks = {
     about: [
       { name: "Our Mission", href: "/about" },
-      { name: "Our Impact", href: "/impact" },
-      { name: "Project Neev", href: "/project-neev" },
-      { name: "Stories", href: "/stories" },
+      // { name: "Our Impact", href: "/impact" },
+      { name: "Project Neev", href: "/campaigns/project-neev" },
+      // { name: "Stories", href: "/stories" },
     ],
     getInvolved: [
       { name: "Donate", href: "/donate", isButton: true },
-      { name: "Partner", href: "/partner" },
-      { name: "Volunteer", href: "/volunteer" },
+      // { name: "Partner", href: "/partner" },
+      // { name: "Volunteer", href: "/volunteer" },
     ],
     legal: [
       { name: "PoSH Act", href: "/legal/posh-act" },
@@ -62,13 +62,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-white text-black">
-      <div className="px-4 md:px-8 py-12">
+      <div className="px-4 md:px-8 pt-12 pb-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <Image
-                src="/image.png"
+                src="/logo-black.png"
                 alt="Sashaktikaran"
                 width={180}
                 height={60}
@@ -166,18 +166,17 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-black/80 mt-1" />
                 <span className="text-black/80">
-                  123 Education Street,
-                  <br />
-                  New Delhi, India 110001
+                  A-3, 501, Priyadarshini Adhishthan, <br /> Bawadiya Kalan,
+                  Bhopal, MP - 462026
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-black/80" />
                 <a
-                  href="tel:+911234567890"
+                  href="tel:+916232142245"
                   className="text-black/80 hover:text-black transition-colors"
                 >
-                  +91 123 456 7890
+                  +91 623 214 2245
                 </a>
               </li>
               <li className="flex items-center space-x-3">
@@ -186,7 +185,7 @@ const Footer = () => {
                   href="mailto:contact@sashaktikaran.org"
                   className="text-black/80 hover:text-black transition-colors"
                 >
-                  contact@sashaktikaran.org
+                  admin@sashaktikaran.org
                 </a>
               </li>
             </ul>
@@ -195,11 +194,11 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-black/60 text-sm">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
+            <p className="text-black/60 text-sm text-center">
               © {currentYear} Sashaktikaran. All rights reserved.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <Link
                 href="/privacy"
                 className="text-black/60 hover:text-black text-sm transition-colors"
@@ -212,7 +211,7 @@ const Footer = () => {
               >
                 Terms of Service
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

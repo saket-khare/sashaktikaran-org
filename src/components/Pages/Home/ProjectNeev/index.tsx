@@ -18,8 +18,11 @@ const ProjectNeev = () => {
       <div className=" mx-auto px-4 md:px-8">
         {/* Section header */}
         <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
-            Project Neev : Where the Journey Begins
+          <h2 className="text-3xl md:text-4xl font-bold text-[#E46F49] mb-4">
+            Project Neev :{" "}
+            <span className="text-[#4996e4] font-black">
+              Where the Journey Begins
+            </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Our flagship initiative focused on laying strong foundations for
@@ -59,7 +62,7 @@ const ProjectNeev = () => {
                 Building Strong Foundations
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Launched in 2023, Project Neev is our flagship initiative
+                Launched in 2024, Project Neev is our flagship initiative
                 focused on foundational learning for children aged 4–10. Run
                 entirely by local women educators, the program blends community
                 trust with structured learning.
@@ -73,10 +76,10 @@ const ProjectNeev = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-[#006b5e]/3 p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
+                className="bg-[#4996e4]/3 p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#4996e4] rounded-full flex items-center justify-center flex-shrink-0">
                     <Users className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -95,10 +98,10 @@ const ProjectNeev = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-[#006b5e]/3 p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
+                className="bg-[#4996e4]/3 p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#4996e4] rounded-full flex items-center justify-center flex-shrink-0">
                     <BookOpen className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -117,10 +120,10 @@ const ProjectNeev = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-[#006b5e]/3 p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
+                className="bg-[#4996e4]/3 p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#4996e4] rounded-full flex items-center justify-center flex-shrink-0">
                     <Heart className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -148,7 +151,7 @@ const ProjectNeev = () => {
         >
           <button
             onClick={handleReadFullStory}
-            className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 flex items-center space-x-2 group hover:shadow-lg mx-auto"
+            className="bg-[#4996e4] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#4996e4]/90 transition-all duration-300 flex items-center space-x-2 group hover:shadow-lg mx-auto"
           >
             <span>Read the Full Story</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

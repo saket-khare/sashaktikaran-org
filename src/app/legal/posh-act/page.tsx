@@ -89,15 +89,15 @@ const PoSHActPage = () => {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-[#006b5e]/5 py-20">
+      <section className="bg-[#4996e4]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-[#006b5e]/10 text-[#006b5e] text-sm font-medium rounded-full mb-4">
+              <span className="inline-block px-4 py-2 bg-[#4996e4]/10 text-[#4996e4] text-sm font-medium rounded-full mb-4">
                 Legal Framework
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#E46F49] mb-6">
               Prevention of Sexual Harassment (PoSH) Act
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -115,7 +115,7 @@ const PoSHActPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-6">
                 Overview
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -132,11 +132,11 @@ const PoSHActPage = () => {
               </p>
             </div>
 
-            <div className="bg-[#006b5e]/5 rounded-2xl p-8">
-              <div className="w-16 h-16 bg-[#006b5e] rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-[#4996e4]/5 rounded-2xl p-8">
+              <div className="w-16 h-16 bg-[#4996e4] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#006b5e] text-center mb-4">
+              <h3 className="text-xl font-bold text-[#4996e4] text-center mb-4">
                 PoSH Act 2013
               </h3>
               <p className="text-gray-600 text-center">
@@ -153,7 +153,7 @@ const PoSHActPage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#4996e4] mb-4">
               Key Provisions
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -170,8 +170,8 @@ const PoSHActPage = () => {
                   key={index}
                   className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-[#006b5e]/10 rounded-full flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6 text-[#006b5e]" />
+                  <div className="w-12 h-12 bg-[#4996e4]/10 rounded-full flex items-center justify-center mb-4">
+                    <IconComponent className="w-6 h-6 text-[#4996e4]" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {provision.title}
@@ -190,7 +190,7 @@ const PoSHActPage = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#E46F49] mb-4">
               Our Commitment to PoSH
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -204,7 +204,7 @@ const PoSHActPage = () => {
               const IconComponent = commitment.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-[#006b5e] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#E46F49] rounded-full flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -221,7 +221,7 @@ const PoSHActPage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-[#006b5e]">
+      <section className="py-16 bg-[#4996e4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -232,18 +232,6 @@ const PoSHActPage = () => {
               Together, we can build a world free from harassment and
               discrimination.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-[#006b5e] hover:bg-white/90 px-8 py-3 rounded-lg font-semibold transition-colors">
-                Get Involved
-              </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#006b5e] px-8 py-3 rounded-lg font-semibold transition-colors"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Contact Us
-              </Button>
-            </div>
           </div>
         </div>
       </section>
