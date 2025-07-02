@@ -1,11 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import DonationModal from "@/components/ui/donation-modal";
 import { Heart, MapPin, School, Users } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { useState } from "react";
 
 const AboutPage = () => {
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
+
   const achievements = [
     {
       number: "650+",
@@ -61,7 +65,10 @@ const AboutPage = () => {
               future.
             </p>
             <div>
-              <Button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
+              <Button
+                onClick={() => setIsDonationModalOpen(true)}
+                className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300"
+              >
                 Contribute Now
               </Button>
             </div>
@@ -172,12 +179,21 @@ const AboutPage = () => {
             <p className="text-lg text-gray-600 mb-8">
               Become a member and help us improve the world.
             </p>
-            <Button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
+            <Button
+              onClick={() => setIsDonationModalOpen(true)}
+              className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300"
+            >
               Contribute Now
             </Button>
           </div>
         </div>
       </section>
+
+      {/* Donation Modal */}
+      <DonationModal
+        isOpen={isDonationModalOpen}
+        onClose={() => setIsDonationModalOpen(false)}
+      />
     </main>
   );
 };

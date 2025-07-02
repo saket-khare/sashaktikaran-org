@@ -13,9 +13,12 @@ import {
 import { motion } from "motion/react";
 import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
+import { useState } from "react";
+import DonationModal from "@/components/ui/donation-modal";
 
 export default function CampaignPage() {
   const { slug } = useParams();
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   const campaign = caseStudies.find((study) => study.slug === slug);
 
@@ -285,7 +288,10 @@ export default function CampaignPage() {
                       </div>
                     </div>
 
-                    <button className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90 text-white py-3 rounded-lg font-semibold transition-colors mb-3">
+                    <button
+                      onClick={() => setIsDonationModalOpen(true)}
+                      className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90 text-white py-3 rounded-lg font-semibold transition-colors mb-3"
+                    >
                       Support This Campaign
                     </button>
 
@@ -372,6 +378,12 @@ export default function CampaignPage() {
           </div>
         </div>
       </section>
+
+      {/* Donation Modal */}
+      <DonationModal
+        isOpen={isDonationModalOpen}
+        onClose={() => setIsDonationModalOpen(false)}
+      />
     </main>
   );
 }

@@ -2,11 +2,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import DonationModal from "../ui/donation-modal";
 import { MenuIcon, XIcon } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   const navLinks = [
     { name: "About", path: "/about" },
@@ -105,11 +107,12 @@ const Navbar = () => {
 
           {/* Contribute button */}
           <div className="hidden md:flex items-center">
-            <Link href="/contribute">
-              <Button className="ml-8 bg-[#006b5e] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 hover:shadow-md">
-                Contribute Now
-              </Button>
-            </Link>
+            <Button
+              onClick={() => setIsDonationModalOpen(true)}
+              className="ml-8 bg-[#006b5e] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 hover:shadow-md"
+            >
+              Contribute Now
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -175,19 +178,26 @@ const Navbar = () => {
                 </motion.div>
               ))}
               <motion.div variants={itemVariants} layout className="pt-2">
-                <Link href="/contribute">
-                  <Button
-                    onClick={() => setIsMenuOpen(false)}
-                    className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90 text-white py-3 rounded-lg shadow-sm"
-                  >
-                    Contribute Now
-                  </Button>
-                </Link>
+                <Button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsDonationModalOpen(true);
+                  }}
+                  className="w-full bg-[#006b5e] hover:bg-[#006b5e]/90 text-white py-3 rounded-lg shadow-sm"
+                >
+                  Contribute Now
+                </Button>
               </motion.div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Donation Modal */}
+      <DonationModal
+        isOpen={isDonationModalOpen}
+        onClose={() => setIsDonationModalOpen(false)}
+      />
     </nav>
   );
 };

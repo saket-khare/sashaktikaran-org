@@ -4,7 +4,11 @@ import { ArrowRight, Handshake, Heart, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { BiRupee } from "react-icons/bi";
 
-const GetInvolved = () => {
+interface GetInvolvedProps {
+  onContributeClick?: () => void;
+}
+
+const GetInvolved = ({ onContributeClick }: GetInvolvedProps) => {
   // [AI] Three paths for contribution as specified
   const involvementPaths = [
     {
@@ -113,7 +117,10 @@ const GetInvolved = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center pt-10"
         >
-          <button className="bg-white text-[#006b5e] px-12 py-4 rounded-lg text-xl font-medium hover:bg-white/90 transition-all duration-300 inline-flex items-center space-x-3 group hover:shadow-lg">
+          <button
+            onClick={onContributeClick}
+            className="bg-white text-[#006b5e] px-12 py-4 rounded-lg text-xl font-medium hover:bg-white/90 transition-all duration-300 inline-flex items-center space-x-3 group hover:shadow-lg"
+          >
             <span>Support the Mission</span>
             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </button>

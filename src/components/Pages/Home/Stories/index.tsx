@@ -4,7 +4,11 @@ import { ArrowRight, Heart, BookOpen, TreePine } from "lucide-react";
 import Image from "next/image";
 import { motion } from "motion/react";
 
-const Stories = () => {
+interface StoriesProps {
+  onContributeClick?: () => void;
+}
+
+const Stories = ({ onContributeClick }: StoriesProps) => {
   // [AI] Example stories as specified in the requirements
   const stories = [
     {
@@ -116,7 +120,10 @@ const Stories = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center pt-10"
           >
-            <button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 flex items-center space-x-2 group hover:shadow-lg mx-auto">
+            <button
+              onClick={onContributeClick}
+              className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300 flex items-center space-x-2 group hover:shadow-lg mx-auto"
+            >
               <span>Contribute to our mission</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>

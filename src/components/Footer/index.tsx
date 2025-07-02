@@ -3,6 +3,8 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import DonationModal from "../ui/donation-modal";
 import {
   Facebook,
   Instagram,
@@ -14,6 +16,7 @@ import {
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   const footerLinks = {
     about: [
@@ -23,7 +26,7 @@ const Footer = () => {
       { name: "Stories", href: "/stories" },
     ],
     getInvolved: [
-      { name: "Donate", href: "/donate" },
+      { name: "Donate", href: "/donate", isButton: true },
       { name: "Partner", href: "/partner" },
       { name: "Volunteer", href: "/volunteer" },
     ],
@@ -119,12 +122,21 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.getInvolved.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-black/80 hover:text-black transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.isButton ? (
+                    <button
+                      onClick={() => setIsDonationModalOpen(true)}
+                      className="text-black/80 hover:text-black transition-colors"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-black/80 hover:text-black transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -204,6 +216,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Donation Modal */}
+      <DonationModal
+        isOpen={isDonationModalOpen}
+        onClose={() => setIsDonationModalOpen(false)}
+      />
     </footer>
   );
 };
