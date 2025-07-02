@@ -1,21 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "motion/react";
-import CountUp from "react-countup";
-import {
-  MapPin,
-  Users,
-  GraduationCap,
-  Quote,
-  ChevronLeft,
-  ChevronRight,
-  Play,
-  Pause,
-} from "lucide-react";
-import { TbMoodKid } from "react-icons/tb";
 import { cn } from "@/lib/utils";
+import { ChevronLeft, ChevronRight, MapPin, Pause, Play } from "lucide-react";
+import { motion } from "motion/react";
+import Image from "next/image";
+import { useRef, useState } from "react";
+import CountUp from "react-countup";
+import { RiWomenLine } from "react-icons/ri";
+import { TbMoodKid } from "react-icons/tb";
 
 const Impact = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -25,19 +17,19 @@ const Impact = () => {
 
   const videos = [
     {
-      src: "/videos/1.mp4",
+      src: "/videos/3.mp4",
       title: "Success Story 1",
+      description: "Experience the journey of our Shiksha Sathis",
+    },
+    {
+      src: "/videos/1.mp4",
+      title: "Success Story 2",
       description: "Watch how we're transforming lives through education",
     },
     {
       src: "/videos/2.mp4",
-      title: "Success Story 2",
-      description: "See the impact of our community-led learning centers",
-    },
-    {
-      src: "/videos/3.mp4",
       title: "Success Story 3",
-      description: "Experience the journey of our Shiksha Sathis",
+      description: "See the impact of our community-led learning centers",
     },
   ];
 
@@ -72,7 +64,7 @@ const Impact = () => {
       number: 20,
       label: "women trained as Shiksha Sathis",
       suffix: "+",
-      icon: TbMoodKid,
+      icon: RiWomenLine,
     },
     {
       number: 650,
@@ -116,7 +108,7 @@ const Impact = () => {
 
   return (
     <section className="py-10 lg:py-20 w-full">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="px-4 md:px-8">
         {/* Section Heading */}
         <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
@@ -151,7 +143,7 @@ const Impact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 shadow hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center mr-4">
@@ -191,7 +183,7 @@ const Impact = () => {
           </div>
 
           {/* Desktop Grid View */}
-          <div className="hidden md:grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {videos.map((video, index) => (
               <motion.div
                 key={index}
@@ -249,7 +241,7 @@ const Impact = () => {
           </div>
 
           {/* Mobile Carousel View */}
-          <div className="md:hidden max-w-md mx-auto">
+          <div className="hidden max-w-md mx-auto">
             <motion.div
               key={currentVideo}
               initial={{ opacity: 0, x: 20 }}

@@ -123,36 +123,23 @@ const ContactPage = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="pt-16">
       {/* Hero Section */}
       <section className="bg-[#006b5e]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6"
-            >
+            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
               Get In Touch
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 mb-8"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
               We'd love to hear from you. Send us a message and we'll respond as
               soon as possible.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            </p>
+            <div>
               <Button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
                 Send Us a Message
               </Button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -160,13 +147,7 @@ const ContactPage = () => {
       {/* Contact Info Cards */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
               Contact Information
             </h2>
@@ -174,18 +155,14 @@ const ContactPage = () => {
               Multiple ways to reach us for any questions, partnerships, or
               support
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow"
                 >
                   <div className="w-16 h-16 bg-[#006b5e]/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -206,7 +183,7 @@ const ContactPage = () => {
                       {info.action} →
                     </button>
                   )}
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -218,12 +195,7 @@ const ContactPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
                 <h2 className="text-2xl font-bold text-[#006b5e] mb-6">
                   Send Us a Message
@@ -370,16 +342,10 @@ const ContactPage = () => {
                   </button>
                 </form>
               </div>
-            </motion.div>
+            </div>
 
             {/* Map & Additional Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="space-y-6"
-            >
+            <div className="space-y-6">
               {/* Map Placeholder */}
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
                 <div className="h-64 bg-gray-100 flex items-center justify-center">
@@ -455,7 +421,7 @@ const ContactPage = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -463,13 +429,7 @@ const ContactPage = () => {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
               Frequently Asked Questions
             </h2>
@@ -477,7 +437,7 @@ const ContactPage = () => {
               Quick answers to common questions about our work and how you can
               get involved
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
@@ -502,12 +462,8 @@ const ContactPage = () => {
                   "Yes, we organize field visits for supporters and partners. Contact us to schedule a visit to our project sites.",
               },
             ].map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
               >
                 <h3 className="font-semibold text-gray-900 mb-3">
@@ -516,7 +472,7 @@ const ContactPage = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {faq.answer}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

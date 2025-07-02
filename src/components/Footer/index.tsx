@@ -27,6 +27,11 @@ const Footer = () => {
       { name: "Partner", href: "/partner" },
       { name: "Volunteer", href: "/volunteer" },
     ],
+    legal: [
+      { name: "PoSH Act", href: "/legal/posh-act" },
+      { name: "JJ Act", href: "/legal/jj-act" },
+      { name: "POCSO Act", href: "/legal/pocso-act" },
+    ],
     resources: [
       { name: "Blog", href: "/blog" },
       { name: "Newsletter", href: "/newsletter" },
@@ -53,9 +58,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#006b5e] text-white">
-      <div className="container mx-auto px-4 md:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-white text-black">
+      <div className="px-4 md:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
@@ -67,7 +72,7 @@ const Footer = () => {
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-black/80 text-sm leading-relaxed">
               Empowering rural communities through education, one village at a
               time.
             </p>
@@ -80,7 +85,7 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                    className="w-10 h-10 bg-black/10 rounded-full flex items-center justify-center hover:bg-black/20 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -99,7 +104,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-black/80 hover:text-black transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -116,7 +121,24 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-black/80 hover:text-black transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Framework Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Legal Framework</h3>
+            <ul className="space-y-2">
+              {footerLinks.legal.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-black/80 hover:text-black transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -130,27 +152,27 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-white/80 mt-1" />
-                <span className="text-white/80">
+                <MapPin className="w-5 h-5 text-black/80 mt-1" />
+                <span className="text-black/80">
                   123 Education Street,
                   <br />
                   New Delhi, India 110001
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-white/80" />
+                <Phone className="w-5 h-5 text-black/80" />
                 <a
                   href="tel:+911234567890"
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-black/80 hover:text-black transition-colors"
                 >
                   +91 123 456 7890
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-white/80" />
+                <Mail className="w-5 h-5 text-black/80" />
                 <a
                   href="mailto:contact@sashaktikaran.org"
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-black/80 hover:text-black transition-colors"
                 >
                   contact@sashaktikaran.org
                 </a>
@@ -162,19 +184,19 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/60 text-sm">
+            <p className="text-black/60 text-sm">
               © {currentYear} Sashaktikaran. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link
                 href="/privacy"
-                className="text-white/60 hover:text-white text-sm transition-colors"
+                className="text-black/60 hover:text-black text-sm transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-white/60 hover:text-white text-sm transition-colors"
+                className="text-black/60 hover:text-black text-sm transition-colors"
               >
                 Terms of Service
               </Link>

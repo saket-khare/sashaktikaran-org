@@ -75,17 +75,6 @@ const OurModel = () => {
             );
           })}
         </div>
-
-        {/* [AI] Bottom emphasis */}
-        <div className="mt-16 text-center">
-          <div className="bg-primary/10 p-8 rounded-2xl max-w-4xl mx-auto">
-            <p className="text-xl text-white leading-relaxed">
-              <span className="font-semibold text-primary">Our secret?</span> We
-              don't just bring education to villages — we help villages build
-              their own educational ecosystem that lasts for generations.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -1,13 +1,14 @@
 "use client";
 
-import { ArrowRight, DollarSign, Handshake, Heart, Users } from "lucide-react";
+import { ArrowRight, Handshake, Heart, Users } from "lucide-react";
 import { motion } from "motion/react";
+import { BiRupee } from "react-icons/bi";
 
 const GetInvolved = () => {
   // [AI] Three paths for contribution as specified
   const involvementPaths = [
     {
-      icon: DollarSign,
+      icon: BiRupee,
       title: "Donate",
       description: "Sponsor a child's education or a Shiksha Sathi's training.",
       subDescription:

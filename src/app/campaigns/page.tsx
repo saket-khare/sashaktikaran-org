@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 import { caseStudies } from "@/data/caseStudies";
 import CampaignCard from "@/components/Pages/Campaigns/CampaignCard";
 import { Button } from "@/components/ui/button";
@@ -13,35 +13,23 @@ const CampaignsPage = () => {
   );
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="pt-16">
       {/* Hero Section */}
+
       <section className="bg-[#006b5e]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6"
-            >
+            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
               Our Campaigns
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 mb-8"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
               Transforming communities through education, one campaign at a time
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            </p>
+            <div>
               <Button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
                 Support a Campaign
               </Button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -50,13 +38,7 @@ const CampaignsPage = () => {
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-2">
                 {campaigns
                   .reduce(
@@ -67,28 +49,16 @@ const CampaignsPage = () => {
                 +
               </div>
               <div className="text-gray-600">Lives Impacted</div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-2">
                 {campaigns.length}
               </div>
               <div className="text-gray-600">Active Campaigns</div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-2">
                 {campaigns.reduce(
                   (total, campaign) => total + campaign.impact.participants,
@@ -97,7 +67,7 @@ const CampaignsPage = () => {
                 +
               </div>
               <div className="text-gray-600">Community Partners</div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -105,13 +75,7 @@ const CampaignsPage = () => {
       {/* Campaigns Section */}
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#006b5e] mb-4">
               Active Campaigns
             </h2>
@@ -119,30 +83,18 @@ const CampaignsPage = () => {
               Each campaign represents our commitment to creating lasting change
               in rural communities through education and empowerment.
             </p>
-          </motion.div>
+          </div>
 
           {campaigns.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {campaigns.map((campaign, index) => (
-                <motion.div
-                  key={campaign.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
+                <div key={campaign.id}>
                   <CampaignCard campaign={campaign} />
-                </motion.div>
+                </div>
               ))}
             </div>
           ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center py-12"
-            >
+            <div className="text-center py-12">
               <div className="bg-white rounded-xl p-8 max-w-md mx-auto border border-gray-200">
                 <h3 className="text-xl font-semibold text-[#006b5e] mb-2">
                   No Active Campaigns
@@ -151,7 +103,7 @@ const CampaignsPage = () => {
                   We're currently developing new campaigns. Check back soon!
                 </p>
               </div>
-            </motion.div>
+            </div>
           )}
         </div>
       </section>
@@ -159,12 +111,7 @@ const CampaignsPage = () => {
       {/* Call to Action Section */}
       <section className="py-16 bg-[#006b5e] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Want to Make a Difference?
             </h2>
@@ -181,7 +128,7 @@ const CampaignsPage = () => {
                 Learn How to Help
               </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

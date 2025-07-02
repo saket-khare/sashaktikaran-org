@@ -17,7 +17,7 @@ export default function Home() {
       <Impact />
       <ProjectNeev />
       <GetInvolved />
-      <Stories />
+      {/* <Stories /> */}
       {/* <Newsletter /> */}
     </div>
   );

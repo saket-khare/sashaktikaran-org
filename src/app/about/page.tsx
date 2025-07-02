@@ -53,31 +53,18 @@ const AboutPage = () => {
       <section className="bg-[#006b5e]/5 py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6"
-            >
+            <h1 className="text-4xl md:text-5xl font-bold text-[#006b5e] mb-6">
               Empowering children's futures
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 mb-8"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
               Offering children hope, knowledge, and a path to a brighter
               future.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            </p>
+            <div>
               <Button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
                 Contribute Now
               </Button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -86,12 +73,7 @@ const AboutPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="prose prose-lg mx-auto"
-            >
+            <div className="prose prose-lg mx-auto">
               <p className="text-gray-700 leading-relaxed">
                 Sashaktikaran Foundation was incorporated as a not-for-profit
                 Section 8 Company on March 8, 2017—International Women's Day—a
@@ -103,7 +85,7 @@ const AboutPage = () => {
                 organization, expanding our scope of operations throughout
                 Madhya Pradesh.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -124,12 +106,8 @@ const AboutPage = () => {
             {achievements.map((achievement, index) => {
               const Icon = achievement.icon;
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
                   className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-12 h-12 bg-[#006b5e] rounded-full flex items-center justify-center mb-4">
@@ -139,7 +117,7 @@ const AboutPage = () => {
                     {achievement.number}
                   </h3>
                   <p className="text-gray-600">{achievement.label}</p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -160,12 +138,8 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="relative h-96">
@@ -182,7 +156,7 @@ const AboutPage = () => {
                   </h3>
                   <p className="text-[#006b5e]">{member.role}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -201,31 +175,6 @@ const AboutPage = () => {
             <Button className="bg-[#006b5e] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
               Contribute Now
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-[#006b5e] mb-4">
-              Subscribe to our newsletter
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Subscribe to stay informed about our new campaigns, blogs and
-              other projects.
-            </p>
-            <div className="flex gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter Your Email"
-                className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#006b5e] focus:border-transparent"
-              />
-              <Button className="bg-[#006b5e] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#006b5e]/90 transition-all duration-300">
-                Subscribe
-              </Button>
-            </div>
           </div>
         </div>
       </section>
