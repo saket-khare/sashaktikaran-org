@@ -1,31 +1,20 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import { motion } from "motion/react";
-import {
-  MapPin,
-  Users,
-  IndianRupee,
-  Calendar,
-  Target,
-  CheckCircle,
-  AlertCircle,
-  BookOpen,
-  Heart,
-  Share2,
-} from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
-import type { CaseStudy } from "@/data/caseStudies";
+import {
+  Calendar,
+  CheckCircle,
+  Heart,
+  MapPin,
+  Share2,
+  Target,
+  Users,
+} from "lucide-react";
+import { motion } from "motion/react";
+import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
 
-interface CampaignPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function CampaignPage({ params }: CampaignPageProps) {
+export default function CampaignPage() {
   const { slug } = useParams();
 
   const campaign = caseStudies.find((study) => study.slug === slug);
