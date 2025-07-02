@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import DonationModal from "../ui/donation-modal";
 import { MenuIcon, XIcon } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,10 +83,18 @@ const Navbar = () => {
               className="flex-shrink-0 flex items-center space-x-2 group"
             >
               {/* Logo placeholder - replace src with your logo */}
-              <div className="w-10 h-10 bg-[#006b5e] rounded-full transition-transform duration-300 group-hover:scale-105"></div>
+
+              <Image
+                src="/image.png"
+                alt="Sashaktikaran"
+                width={100}
+                height={100}
+                className="h-10 w-auto rounded-full"
+              />
+              {/* <div className="w-10 h-10 bg-[#006b5e] rounded-full transition-transform duration-300 group-hover:scale-105"></div>
               <span className="text-xl font-bold text-[#006b5e]">
                 Sashaktikaran
-              </span>
+              </span> */}
             </Link>
           </div>
 

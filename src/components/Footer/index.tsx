@@ -46,17 +46,17 @@ const Footer = () => {
     {
       name: "Facebook",
       icon: Facebook,
-      href: "https://facebook.com/sashaktikaran",
+      href: "https://www.facebook.com/share/1E9rBqeAKG/?mibextid=wwXIfr",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      href: "https://instagram.com/sashaktikaran",
+      href: "https://www.instagram.com/sashaktikaran.foundation?igsh=dW0za2FhczZveHc%3D&utm_source=qr",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/company/sashaktikaran",
+      href: "https://www.linkedin.com/company/sashaktikaran-foundation/",
     },
   ];
 
@@ -68,11 +68,11 @@ const Footer = () => {
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <Image
-                src="/logo-white.png"
+                src="/image.png"
                 alt="Sashaktikaran"
                 width={180}
                 height={60}
-                className="h-12 w-auto"
+                className="h-12 w-auto mix-blend-multiply"
               />
             </Link>
             <p className="text-black/80 text-sm leading-relaxed">
